@@ -126,6 +126,7 @@
             this.MainGridViev.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MainGridViev.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MainGridViev.Name = "MainGridViev";
+            this.MainGridViev.ReadOnly = true;
             // 
             // toolStrip1
             // 

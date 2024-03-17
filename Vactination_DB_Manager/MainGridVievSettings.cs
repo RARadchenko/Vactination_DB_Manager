@@ -49,6 +49,7 @@ namespace Vactination_DB_Manager
 
         public void startSettings()
         {
+            MainGridViev.Height = 900;
             // Перевірка вибраної мови і встановлення маски відповідно
             string[] mask;
             if (chosen_lang == "en")
@@ -62,11 +63,12 @@ namespace Vactination_DB_Manager
 
             // Встановлення налаштувань для MainGridView з використанням обраної маски
             MainGridViev.RowCount = 1;
+
             MainGridViev.ColumnCount = mask.Length;
-            MainGridViev.Columns.Clear();
-            foreach (string columnName in mask)
+            //MainGridViev.Columns.Clear();
+            for (int i = 0; i < mask.Length; i++)
             {
-                MainGridViev.Columns.Add(columnName, columnName);
+                MainGridViev.Columns[i].HeaderText = mask[i];
             }
         }
     }
