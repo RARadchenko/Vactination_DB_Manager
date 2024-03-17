@@ -19,12 +19,23 @@ namespace Vactination_DB_Manager
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // запуск таймеру
             StatusTimeTimer.Enabled = true;
-            // щоб одразу показати дату-час
             StatusTimeTimer.Interval = 100;
-            StatusTimeTimer.Start(); // запуск таймера
-        }
+            StatusTimeTimer.Start();
 
+            //налаштування mainGridViev
+            MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
+            mainGrid.startSettings();
+            //MainGridViev.RowCount = 1;
+            //MainGridViev.ColumnCount = 20;
+
+        }
+        /// <summary>
+        /// обробник таймеру поточної дати та часу
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StatusTimeTimer_Tick(object sender, EventArgs e)
         {
             StatusTimeTimer.Interval = 1000;
