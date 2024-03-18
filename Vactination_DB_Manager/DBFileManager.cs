@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+
 
 namespace Vactination_DB_Manager
 {
-    internal class DBFileManager
+    class DBFileManager
     {
         private string FileName = "";
         private string[] fileLines = { };
 
-        DBFileManager(string FileName) 
+        public DBFileManager(string FileName) 
         {
             this.FileName = FileName;
         }
-        DBFileManager(){}
+        public DBFileManager(){}
 
         public void setFileName(string FileName) { this.FileName = FileName;}
 
@@ -39,7 +41,7 @@ namespace Vactination_DB_Manager
         {
             try
             {
-                string[] fileLines = File.ReadAllLines(FileName);
+                fileLines = File.ReadAllLines(FileName);
                 return fileLines;
             }
             catch (Exception e)
@@ -56,7 +58,9 @@ namespace Vactination_DB_Manager
 
         public string[] splitLine(string oneline) 
         {
-            string[] parts = oneline.Split(';');
+            
+            string pattern = @",(?=(?:[^\""]*\""[^\""]*\"")*(?![^\""]*\""))";
+            string[] parts = Regex.Split(oneline, pattern);
             return parts;
         }
 

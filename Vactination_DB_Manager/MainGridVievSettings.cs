@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Vactination_DB_Manager
@@ -70,6 +71,21 @@ namespace Vactination_DB_Manager
             {
                 MainGridViev.Columns[i].HeaderText = mask[i];
             }
+        }
+
+        public void addNewLine (string[] newLine)
+        {
+
+            // Проходим по каждому элементу массива и устанавливаем его в соответствующей колонке нового ряда
+            DataGridViewRow newRow = new DataGridViewRow();
+            newRow.CreateCells(MainGridViev);
+            for (int i = 0; i < newLine.Length; i++)
+            {
+                newRow.Cells[i].Value = newLine[i];
+            }
+
+            // Добавляем новый ряд в DataGridView
+            MainGridViev.Rows.Add(newRow);
         }
     }
 }
