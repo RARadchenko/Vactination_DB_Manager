@@ -41,6 +41,8 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.VievToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.налаштуванняТаблиціToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.моваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainGridViev = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.ExampleButton1 = new System.Windows.Forms.ToolStripButton();
@@ -54,22 +56,22 @@
             // 
             // statusStrip1
             // 
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CurrentDate,
             this.toolStripProgressBar1});
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
             // 
             // CurrentDate
             // 
-            resources.ApplyResources(this.CurrentDate, "CurrentDate");
             this.CurrentDate.Name = "CurrentDate";
+            resources.ApplyResources(this.CurrentDate, "CurrentDate");
             // 
             // toolStripProgressBar1
             // 
-            resources.ApplyResources(this.toolStripProgressBar1, "toolStripProgressBar1");
             this.toolStripProgressBar1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            resources.ApplyResources(this.toolStripProgressBar1, "toolStripProgressBar1");
             // 
             // StatusTimeTimer
             // 
@@ -86,46 +88,59 @@
             // 
             // FileStripMenuItem1
             // 
-            resources.ApplyResources(this.FileStripMenuItem1, "FileStripMenuItem1");
             this.FileStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem});
             this.FileStripMenuItem1.Name = "FileStripMenuItem1";
+            resources.ApplyResources(this.FileStripMenuItem1, "FileStripMenuItem1");
             // 
             // newToolStripMenuItem
             // 
-            resources.ApplyResources(this.newToolStripMenuItem, "newToolStripMenuItem");
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            resources.ApplyResources(this.newToolStripMenuItem, "newToolStripMenuItem");
             // 
             // openToolStripMenuItem
             // 
-            resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
-            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
             // 
             // saveAsToolStripMenuItem
             // 
-            resources.ApplyResources(this.saveAsToolStripMenuItem, "saveAsToolStripMenuItem");
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            resources.ApplyResources(this.saveAsToolStripMenuItem, "saveAsToolStripMenuItem");
             // 
             // VievToolStripMenuItem
             // 
-            resources.ApplyResources(this.VievToolStripMenuItem, "VievToolStripMenuItem");
+            this.VievToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.налаштуванняТаблиціToolStripMenuItem,
+            this.моваToolStripMenuItem});
             this.VievToolStripMenuItem.Name = "VievToolStripMenuItem";
+            resources.ApplyResources(this.VievToolStripMenuItem, "VievToolStripMenuItem");
+            // 
+            // налаштуванняТаблиціToolStripMenuItem
+            // 
+            this.налаштуванняТаблиціToolStripMenuItem.Name = "налаштуванняТаблиціToolStripMenuItem";
+            resources.ApplyResources(this.налаштуванняТаблиціToolStripMenuItem, "налаштуванняТаблиціToolStripMenuItem");
+            // 
+            // моваToolStripMenuItem
+            // 
+            this.моваToolStripMenuItem.Name = "моваToolStripMenuItem";
+            resources.ApplyResources(this.моваToolStripMenuItem, "моваToolStripMenuItem");
             // 
             // MainGridViev
             // 
-            resources.ApplyResources(this.MainGridViev, "MainGridViev");
             this.MainGridViev.BackgroundColor = System.Drawing.SystemColors.Control;
             this.MainGridViev.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MainGridViev.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.MainGridViev, "MainGridViev");
             this.MainGridViev.Name = "MainGridViev";
             this.MainGridViev.ReadOnly = true;
             // 
@@ -141,21 +156,21 @@
             // 
             // ExampleButton1
             // 
-            resources.ApplyResources(this.ExampleButton1, "ExampleButton1");
             this.ExampleButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.ExampleButton1.Image = global::Vactination_DB_Manager.Properties.Resources.blue_diskette;
+            resources.ApplyResources(this.ExampleButton1, "ExampleButton1");
             this.ExampleButton1.Name = "ExampleButton1";
             // 
             // toolStripButton2
             // 
-            resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
             this.toolStripButton2.Name = "toolStripButton2";
             // 
             // toolStripButton3
             // 
-            resources.ApplyResources(this.toolStripButton3, "toolStripButton3");
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton3, "toolStripButton3");
             this.toolStripButton3.Name = "toolStripButton3";
             // 
             // Form1
@@ -200,6 +215,8 @@
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         public System.Windows.Forms.DataGridView MainGridViev;
+        private System.Windows.Forms.ToolStripMenuItem налаштуванняТаблиціToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem моваToolStripMenuItem;
     }
 }
 

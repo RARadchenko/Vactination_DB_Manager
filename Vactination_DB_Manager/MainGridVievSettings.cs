@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace Vactination_DB_Manager
 {
@@ -13,39 +14,29 @@ namespace Vactination_DB_Manager
         private System.Windows.Forms.DataGridView MainGridViev;
         private string chosen_lang = "en";
 
-        private string[] en_lang_mask = { 
-            "temp_immunization_id",
-            "legal_entity_id",
-            "division_identifier_value",
-            "status",
-            "not_given",
-            "vaccine_code",
-            "immunization_date",
-            "patient_age_group",
-            "patient_gender",
-            "manufacturer",
-            "lot_number",
-            "expiration_date",
-            "dose_quantity_unit",
-            "dose_quantity_value",
-            "vaccination_protocol_dose_sequence",
-            "vaccination_protocol_series",
-            "vaccination_protocol_series_doses",
-            "vaccination_protocol_target_diseases",
-            "inserted_at",
-            "updated_at"
-        };
-        private string[] other_lang_mask = { };
+        private string[] en_lang_mask = { };
+        private string[] ua_lang_mask = { };
+
+        private void readLangsMasks()
+        {
+            ResourceManager resourceManager = new ResourceManager("Vactination_DB_Manager.GridViewLangMasks", typeof(MainGridVievSettings).Assembly);
+
+            // Зчитування масок з файлу ресурсів
+            en_lang_mask = resourceManager.GetString("EN_lang_grid_mask").Split(',');
+            ua_lang_mask = resourceManager.GetString("UA_lang_grid_mask").Split(',');
+        }
 
         public MainGridVievSettings(System.Windows.Forms.DataGridView MainGridViev, string lang) 
         { 
             this.MainGridViev = MainGridViev;
             chosen_lang = lang;
+            readLangsMasks();
         }
 
         public MainGridVievSettings(System.Windows.Forms.DataGridView MainGridViev)
         {
             this.MainGridViev = MainGridViev;
+            readLangsMasks();
         }
 
         public void startSettings()
@@ -59,7 +50,7 @@ namespace Vactination_DB_Manager
             }
             else
             {
-                mask = other_lang_mask;
+                mask = ua_lang_mask;
             }
 
             // Встановлення налаштувань для MainGridView з використанням обраної маски
@@ -75,16 +66,12 @@ namespace Vactination_DB_Manager
 
         public void addNewLine (string[] newLine)
         {
-
-            // Проходим по каждому элементу массива и устанавливаем его в соответствующей колонке нового ряда
             DataGridViewRow newRow = new DataGridViewRow();
             newRow.CreateCells(MainGridViev);
             for (int i = 0; i < newLine.Length; i++)
             {
                 newRow.Cells[i].Value = newLine[i];
             }
-
-            // Добавляем новый ряд в DataGridView
             MainGridViev.Rows.Add(newRow);
         }
     }
