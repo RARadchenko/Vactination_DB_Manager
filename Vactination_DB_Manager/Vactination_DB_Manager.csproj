@@ -97,5 +97,14 @@
   <ItemGroup>
     <None Include="Resources\blue_diskette.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hand_right_arrow1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hand_left_arrow1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lookPage.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

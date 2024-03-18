@@ -13,6 +13,7 @@ namespace Vactination_DB_Manager
     {
         private string FileName = "";
         private string[] fileLines = { };
+        public int LinesCount { get; set; }
 
         public DBFileManager(string FileName) 
         {
@@ -42,6 +43,7 @@ namespace Vactination_DB_Manager
             try
             {
                 fileLines = File.ReadAllLines(FileName);
+                LinesCount = fileLines.Length;
                 return fileLines;
             }
             catch (Exception e)

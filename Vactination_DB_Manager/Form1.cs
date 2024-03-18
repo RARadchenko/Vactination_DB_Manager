@@ -15,6 +15,10 @@ namespace Vactination_DB_Manager
     public partial class Form1 : Form
     {
         private DataGridView mGV;
+        private DBFileManager dBFile;
+
+        private int currentPage = 1;
+        private int maxPage = 1;
         public Form1()
         {
             InitializeComponent();
@@ -46,6 +50,16 @@ namespace Vactination_DB_Manager
             CurrentDate.Text = dt.ToString();
         }
 
+        private void showLines(int start, int finish)
+        {
+            MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
+            for (int i = start; i < finish; i++)
+            {
+                mainGrid.addNewLine(dBFile.splitLine(dBFile.getOneLine(i)));
+                toolStripProgressBar1.Value = (50 - (finish - i)) * 2;
+            }
+        }
+
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -53,15 +67,52 @@ namespace Vactination_DB_Manager
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                DBFileManager dBFile = new DBFileManager(openFileDialog.FileName);
+                dBFile = new DBFileManager(openFileDialog.FileName);
                 dBFile.readDBFileLikeArrayOfLines();
-                MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
-                for (int i = 1; i < 100; i++)
-                {
-                    mainGrid.addNewLine(dBFile.splitLine(dBFile.getOneLine(i)));
-                    toolStripProgressBar1.Value = i;
-                }
-                //toolStripProgressBar1.Value = 0;
+                maxPage = dBFile.LinesCount / 50;
+                PagesInfo.Text = $"{currentPage} page of {maxPage}";
+                showLines(1, 50);
+            }
+        }
+
+        private void showPage()
+        {
+            MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
+            mainGrid.refresh();
+            PagesInfo.Text = $"{currentPage} page of {maxPage}";
+            showLines(currentPage * 50 - 49, currentPage * 50);
+        }
+        private void NextPage_Click(object sender, EventArgs e)
+        {
+            if (currentPage+1 <= maxPage) { currentPage += 1; showPage();}
+            else {
+                MessageBox.Show($"Page can`t be greather than {maxPage}", "Error");
+            }
+        }
+
+        private void PrevPage_Click(object sender, EventArgs e)
+        {
+            if (currentPage-1 > 0) { currentPage -= 1; showPage(); }
+            else
+            {
+                MessageBox.Show($"Page can`t be less than 0", "Error");
+            }
+        }
+
+        private void pageNumberInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void goToPage_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(pageNumberInput.Text) > 0 && int.Parse(pageNumberInput.Text) <= maxPage) { currentPage = int.Parse(pageNumberInput.Text); showPage(); }
+            else
+            {
+                MessageBox.Show($"Page must be in range [1:{maxPage}]", "Error");
             }
         }
     }

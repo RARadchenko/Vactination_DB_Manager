@@ -64,6 +64,11 @@ namespace Vactination_DB_Manager
             }
         }
 
+        public void refresh()
+        {
+            MainGridViev.Rows.Clear();
+        }
+
         public void addNewLine (string[] newLine)
         {
             DataGridViewRow newRow = new DataGridViewRow();
