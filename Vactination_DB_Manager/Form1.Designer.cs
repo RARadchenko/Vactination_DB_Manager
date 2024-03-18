@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.CurrentDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
@@ -161,12 +162,14 @@
             // 
             // MainGridViev
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.MainGridViev.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.MainGridViev.BackgroundColor = System.Drawing.SystemColors.Control;
             this.MainGridViev.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.MainGridViev.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.MainGridViev.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.MainGridViev, "MainGridViev");
             this.MainGridViev.Name = "MainGridViev";
-            this.MainGridViev.ReadOnly = true;
             // 
             // toolStrip1
             // 
@@ -225,6 +228,7 @@
             this.Controls.Add(this.MainGridViev);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

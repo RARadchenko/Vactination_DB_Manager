@@ -53,11 +53,13 @@ namespace Vactination_DB_Manager
         private void showLines(int start, int finish)
         {
             MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
+            MainGridViev.Visible = false;
             for (int i = start; i < finish; i++)
             {
                 mainGrid.addNewLine(dBFile.splitLine(dBFile.getOneLine(i)));
                 toolStripProgressBar1.Value = (50 - (finish - i)) * 2;
             }
+            MainGridViev.Visible = true;
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
