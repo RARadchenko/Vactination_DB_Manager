@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 
 namespace Vactination_DB_Manager
@@ -57,7 +58,7 @@ namespace Vactination_DB_Manager
             for (int i = start; i < finish; i++)
             {
                 mainGrid.addNewLine(dBFile.splitLine(dBFile.getOneLine(i)));
-                toolStripProgressBar1.Value = (50 - (finish - i)) * 2;
+                toolStripProgressBar1.Value = (int)((double)((i - start) / (double)(finish - start)) * 100.0);
             }
             MainGridViev.Visible = true;
         }
@@ -71,9 +72,9 @@ namespace Vactination_DB_Manager
             {
                 dBFile = new DBFileManager(openFileDialog.FileName);
                 dBFile.readDBFileLikeArrayOfLines();
-                maxPage = dBFile.LinesCount / 50;
+                maxPage = dBFile.LinesCount / MainGridVievSettings.q_of_patients_on_page;
                 PagesInfo.Text = $"{currentPage} page of {maxPage}";
-                showLines(1, 50);
+                showLines(1, MainGridVievSettings.q_of_patients_on_page+1);
             }
         }
 
@@ -82,7 +83,7 @@ namespace Vactination_DB_Manager
             MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
             mainGrid.refresh();
             PagesInfo.Text = $"{currentPage} page of {maxPage}";
-            showLines(currentPage * 50 - 49, currentPage * 50);
+            showLines(currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1), currentPage * MainGridVievSettings.q_of_patients_on_page + 1);
         }
         private void NextPage_Click(object sender, EventArgs e)
         {
@@ -116,6 +117,18 @@ namespace Vactination_DB_Manager
             {
                 MessageBox.Show($"Page must be in range [1:{maxPage}]", "Error");
             }
+        }
+
+        private void gridSettings_Click(object sender, EventArgs e)
+        {
+            GridSettingsForm gridSettingsForm = new GridSettingsForm();
+            gridSettingsForm.ShowDialog();
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
+            mainGrid.changeAltCellsColor();
         }
     }
 }

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.CurrentDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
@@ -43,7 +42,7 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.виглядToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.таблицяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.LangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.українськаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,8 +51,8 @@
             this.ExampleButton1 = new System.Windows.Forms.ToolStripButton();
             this.PrevPage = new System.Windows.Forms.ToolStripButton();
             this.NextPage = new System.Windows.Forms.ToolStripButton();
-            this.goToPage = new System.Windows.Forms.ToolStripButton();
             this.pageNumberInput = new System.Windows.Forms.ToolStripTextBox();
+            this.goToPage = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainGridViev)).BeginInit();
@@ -132,15 +131,16 @@
             // виглядToolStripMenuItem
             // 
             this.виглядToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.таблицяToolStripMenuItem,
+            this.gridSettings,
             this.LangToolStripMenuItem});
             this.виглядToolStripMenuItem.Name = "виглядToolStripMenuItem";
             resources.ApplyResources(this.виглядToolStripMenuItem, "виглядToolStripMenuItem");
             // 
-            // таблицяToolStripMenuItem
+            // gridSettings
             // 
-            this.таблицяToolStripMenuItem.Name = "таблицяToolStripMenuItem";
-            resources.ApplyResources(this.таблицяToolStripMenuItem, "таблицяToolStripMenuItem");
+            this.gridSettings.Name = "gridSettings";
+            resources.ApplyResources(this.gridSettings, "gridSettings");
+            this.gridSettings.Click += new System.EventHandler(this.gridSettings_Click);
             // 
             // LangToolStripMenuItem
             // 
@@ -162,8 +162,6 @@
             // 
             // MainGridViev
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.MainGridViev.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.MainGridViev.BackgroundColor = System.Drawing.SystemColors.Control;
             this.MainGridViev.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MainGridViev.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -205,6 +203,13 @@
             this.NextPage.Name = "NextPage";
             this.NextPage.Click += new System.EventHandler(this.NextPage_Click);
             // 
+            // pageNumberInput
+            // 
+            this.pageNumberInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.pageNumberInput, "pageNumberInput");
+            this.pageNumberInput.Name = "pageNumberInput";
+            this.pageNumberInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pageNumberInput_KeyPress);
+            // 
             // goToPage
             // 
             this.goToPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -212,13 +217,6 @@
             resources.ApplyResources(this.goToPage, "goToPage");
             this.goToPage.Name = "goToPage";
             this.goToPage.Click += new System.EventHandler(this.goToPage_Click);
-            // 
-            // pageNumberInput
-            // 
-            this.pageNumberInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.pageNumberInput, "pageNumberInput");
-            this.pageNumberInput.Name = "pageNumberInput";
-            this.pageNumberInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pageNumberInput_KeyPress);
             // 
             // Form1
             // 
@@ -232,6 +230,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -263,7 +262,7 @@
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         public System.Windows.Forms.DataGridView MainGridViev;
         private System.Windows.Forms.ToolStripMenuItem виглядToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem таблицяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gridSettings;
         private System.Windows.Forms.ToolStripMenuItem LangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem українськаToolStripMenuItem;

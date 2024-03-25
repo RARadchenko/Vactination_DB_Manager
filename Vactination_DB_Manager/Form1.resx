@@ -200,10 +200,10 @@
   <data name="FileStripMenuItem1.Text" xml:space="preserve">
     <value>Файл</value>
   </data>
-  <data name="таблицяToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 26</value>
+  <data name="gridSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 26</value>
   </data>
-  <data name="таблицяToolStripMenuItem.Text" xml:space="preserve">
+  <data name="gridSettings.Text" xml:space="preserve">
     <value>Таблиця</value>
   </data>
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -219,7 +219,7 @@
     <value>Українська</value>
   </data>
   <data name="LangToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 26</value>
+    <value>180, 26</value>
   </data>
   <data name="LangToolStripMenuItem.Text" xml:space="preserve">
     <value>Мова</value>
@@ -392,9 +392,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1902, 1001</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1918, 1000</value>
   </data>
@@ -461,10 +458,10 @@
   <data name="&gt;&gt;виглядToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;таблицяToolStripMenuItem.Name" xml:space="preserve">
-    <value>таблицяToolStripMenuItem</value>
+  <data name="&gt;&gt;gridSettings.Name" xml:space="preserve">
+    <value>gridSettings</value>
   </data>
-  <data name="&gt;&gt;таблицяToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;gridSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LangToolStripMenuItem.Name" xml:space="preserve">
@@ -503,17 +500,17 @@
   <data name="&gt;&gt;NextPage.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;goToPage.Name" xml:space="preserve">
-    <value>goToPage</value>
-  </data>
-  <data name="&gt;&gt;goToPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;pageNumberInput.Name" xml:space="preserve">
     <value>pageNumberInput</value>
   </data>
   <data name="&gt;&gt;pageNumberInput.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;goToPage.Name" xml:space="preserve">
+    <value>goToPage</value>
+  </data>
+  <data name="&gt;&gt;goToPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>

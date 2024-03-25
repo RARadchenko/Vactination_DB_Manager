@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Resources;
 using System.Text;
@@ -16,6 +17,10 @@ namespace Vactination_DB_Manager
 
         private string[] en_lang_mask = { };
         private string[] ua_lang_mask = { };
+
+        public static int q_of_patients_on_page { get; set; } = 50;
+        public static Color alternativeCellColorBackground { get; set; } = Color.WhiteSmoke;
+        
 
         private void readLangsMasks()
         {
@@ -78,6 +83,11 @@ namespace Vactination_DB_Manager
                 newRow.Cells[i].Value = newLine[i];
             }
             MainGridViev.Rows.Add(newRow);
+        }
+
+        public void changeAltCellsColor()
+        {
+            MainGridViev.AlternatingRowsDefaultCellStyle.BackColor = alternativeCellColorBackground;
         }
     }
 }
