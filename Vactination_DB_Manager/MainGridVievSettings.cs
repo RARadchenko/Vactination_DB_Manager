@@ -82,10 +82,6 @@ namespace Vactination_DB_Manager
 
         public void refresh()
         {
-
-            MainGridViev.Columns[0].Visible = false;
-            MainGridViev.Columns[1].Visible = false;
-            MainGridViev.Columns[2].Visible = false;
             MainGridViev.Rows.Clear();
         }
 

@@ -231,13 +231,13 @@
     <value>Вигляд</value>
   </data>
   <data name="gridSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 26</value>
+    <value>180, 26</value>
   </data>
   <data name="gridSettings.Text" xml:space="preserve">
     <value>Таблиця</value>
   </data>
   <data name="LangToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 26</value>
+    <value>180, 26</value>
   </data>
   <data name="LangToolStripMenuItem.Text" xml:space="preserve">
     <value>Мова</value>
