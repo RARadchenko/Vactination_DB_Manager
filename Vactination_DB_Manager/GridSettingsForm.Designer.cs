@@ -37,6 +37,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.PairColor = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.FontSize = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.FontFamily = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.qOfPatientsOnPage)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -82,14 +86,14 @@
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Location = new System.Drawing.Point(12, 117);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(359, 119);
+            this.groupBox1.Size = new System.Drawing.Size(450, 119);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Відображення стовбчиків";
             // 
             // SaveSettings
             // 
-            this.SaveSettings.Location = new System.Drawing.Point(281, 245);
+            this.SaveSettings.Location = new System.Drawing.Point(372, 245);
             this.SaveSettings.Name = "SaveSettings";
             this.SaveSettings.Size = new System.Drawing.Size(90, 23);
             this.SaveSettings.TabIndex = 4;
@@ -133,11 +137,66 @@
             this.PairColor.UseVisualStyleBackColor = true;
             this.PairColor.Click += new System.EventHandler(this.PairColor_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(244, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Розмір шрифту";
+            // 
+            // FontSize
+            // 
+            this.FontSize.FormattingEnabled = true;
+            this.FontSize.Items.AddRange(new object[] {
+            "4",
+            "6",
+            "8",
+            "10",
+            "12",
+            "14",
+            "16",
+            "18",
+            "20",
+            "24"});
+            this.FontSize.Location = new System.Drawing.Point(334, 15);
+            this.FontSize.Name = "FontSize";
+            this.FontSize.Size = new System.Drawing.Size(128, 21);
+            this.FontSize.TabIndex = 11;
+            this.FontSize.Text = "8";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(244, 44);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Стиль шрифту";
+            // 
+            // FontFamily
+            // 
+            this.FontFamily.FormattingEnabled = true;
+            this.FontFamily.Items.AddRange(new object[] {
+            "Arial",
+            "Times New Roman",
+            "Microsoft Sans Serif"});
+            this.FontFamily.Location = new System.Drawing.Point(334, 43);
+            this.FontFamily.Name = "FontFamily";
+            this.FontFamily.Size = new System.Drawing.Size(128, 21);
+            this.FontFamily.TabIndex = 13;
+            this.FontFamily.Text = "Arial";
+            // 
             // GridSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 280);
+            this.ClientSize = new System.Drawing.Size(474, 280);
+            this.Controls.Add(this.FontFamily);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.FontSize);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.PairColor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -168,5 +227,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button PairColor;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox FontSize;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox FontFamily;
     }
 }

@@ -162,6 +162,7 @@
             // 
             // MainGridViev
             // 
+            this.MainGridViev.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.MainGridViev.BackgroundColor = System.Drawing.SystemColors.Control;
             this.MainGridViev.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MainGridViev.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;

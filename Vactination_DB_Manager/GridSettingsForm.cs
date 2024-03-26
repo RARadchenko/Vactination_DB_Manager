@@ -33,6 +33,7 @@ namespace Vactination_DB_Manager
         private void SaveSettings_Click(object sender, EventArgs e)
         {
             MainGridVievSettings.q_of_patients_on_page = (int)qOfPatientsOnPage.Value;
+            MainGridVievSettings.GridViewFont = new Font(FontFamily.Text, float.Parse(FontSize.Text));
             this.Close();
         }
 
@@ -41,6 +42,8 @@ namespace Vactination_DB_Manager
             qOfPatientsOnPage.Value = MainGridVievSettings.q_of_patients_on_page;
             UnPairColor.BackColor = MainGridVievSettings.alternativeCellColorBackground;
             PairColor.BackColor = MainGridVievSettings.CellColorBackground;
+            FontSize.Text = MainGridVievSettings.GridViewFont.Size.ToString();
+            FontFamily.Text = MainGridVievSettings.GridViewFont.Name.ToString();
         }
 
         private void PairColor_Click(object sender, EventArgs e)

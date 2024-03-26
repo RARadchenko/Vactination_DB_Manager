@@ -21,6 +21,7 @@ namespace Vactination_DB_Manager
         public static int q_of_patients_on_page { get; set; } = 50;
         public static Color alternativeCellColorBackground { get; set; } = Color.WhiteSmoke;
         public static Color CellColorBackground { get; set; } = Color.White;
+        public static Font GridViewFont { get; set; } = new Font("Microsoft Sans Serif", 8F);
 
         private void readLangsMasks()
         {
@@ -89,6 +90,7 @@ namespace Vactination_DB_Manager
         {
             MainGridViev.AlternatingRowsDefaultCellStyle.BackColor = alternativeCellColorBackground;
             MainGridViev.DefaultCellStyle.BackColor = CellColorBackground;
+            MainGridViev.DefaultCellStyle.Font = GridViewFont;
         }
     }
 }
