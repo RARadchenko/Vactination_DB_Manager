@@ -51,17 +51,6 @@ namespace Vactination_DB_Manager
             CurrentDate.Text = dt.ToString();
         }
 
-        private void showLines(int start, int finish)
-        {
-            //MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
-            //MainGridViev.Visible = false;
-            for (int i = start; i < finish; i++)
-            {
-                mGV.addNewLine(dBFile.splitLine(dBFile.getOneLine(i)));
-                toolStripProgressBar1.Value = (int)((double)((i - start) / (double)(finish - start)) * 100.0);
-            }
-            //MainGridViev.Visible = true;
-        }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -84,7 +73,15 @@ namespace Vactination_DB_Manager
             mGV.refresh();
             maxPage = dBFile.LinesCount / MainGridVievSettings.q_of_patients_on_page;
             PagesInfo.Text = $"{currentPage} page of {maxPage}";
-            showLines(currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1), currentPage * MainGridVievSettings.q_of_patients_on_page + 1);
+            int start = currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1);
+            int finish = currentPage * MainGridVievSettings.q_of_patients_on_page + 1;
+
+            for (int i = start; i < finish; i++)
+            {
+                mGV.addNewLine(dBFile.splitLine(dBFile.getOneLine(i)));
+                toolStripProgressBar1.Value = (int)((double)((i - start) / (double)(finish - start)) * 100.0);
+            }
+            //showLines(currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1), currentPage * MainGridVievSettings.q_of_patients_on_page + 1);
         }
         private void NextPage_Click(object sender, EventArgs e)
         {
