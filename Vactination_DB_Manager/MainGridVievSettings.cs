@@ -18,6 +18,16 @@ namespace Vactination_DB_Manager
         private string[] en_lang_mask = { };
         private string[] ua_lang_mask = { };
 
+        public static bool[] VisibleColums = { 
+            //"temp_immunization_id","legal_entity_id","division_identifier_value","status","not_given"
+            true, true, true, true, true, 
+            //"vaccine_code","immunization_date","patient_age_group","patient_gender","manufacturer",
+            true, true, true, true, true,
+            //"lot_number","expiration_date","dose_quantity_unit","dose_quantity_value","vaccination_protocol_dose_sequence",
+            true, true, true, true, true,
+            //"vaccination_protocol_series","vaccination_protocol_series_doses","vaccination_protocol_target_diseases","inserted_at","updated_at"
+            true, true, true, true, true
+        };
         public static int q_of_patients_on_page { get; set; } = 50;
         public static Color alternativeCellColorBackground { get; set; } = Color.WhiteSmoke;
         public static Color CellColorBackground { get; set; } = Color.White;
@@ -60,7 +70,7 @@ namespace Vactination_DB_Manager
             }
 
             // Встановлення налаштувань для MainGridView з використанням обраної маски
-            MainGridViev.RowCount = 1;
+            //MainGridViev.RowCount = 1;
 
             MainGridViev.ColumnCount = mask.Length;
             //MainGridViev.Columns.Clear();
@@ -72,6 +82,10 @@ namespace Vactination_DB_Manager
 
         public void refresh()
         {
+
+            MainGridViev.Columns[0].Visible = false;
+            MainGridViev.Columns[1].Visible = false;
+            MainGridViev.Columns[2].Visible = false;
             MainGridViev.Rows.Clear();
         }
 
@@ -90,7 +104,18 @@ namespace Vactination_DB_Manager
         {
             MainGridViev.AlternatingRowsDefaultCellStyle.BackColor = alternativeCellColorBackground;
             MainGridViev.DefaultCellStyle.BackColor = CellColorBackground;
+        }
+        public void changeFontStyle()
+        {
             MainGridViev.DefaultCellStyle.Font = GridViewFont;
+        }
+
+        public void changeColums()
+        {
+            for(int i = 0; i < MainGridViev.Columns.Count; i++)
+            {
+                MainGridViev.Columns[i].Visible = VisibleColums[i];
+            }
         }
     }
 }

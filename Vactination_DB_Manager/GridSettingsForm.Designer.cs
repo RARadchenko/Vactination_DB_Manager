@@ -30,8 +30,8 @@
         {
             this.qOfPatientsOnPage = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.VisibleRows = new System.Windows.Forms.CheckedListBox();
             this.SaveSettings = new System.Windows.Forms.Button();
             this.UnPairColor = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -71,29 +71,49 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Кількість записів на сторінці";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(71, 17);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "NotGiven";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 117);
+            this.groupBox1.Controls.Add(this.VisibleRows);
+            this.groupBox1.Location = new System.Drawing.Point(12, 119);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(450, 119);
+            this.groupBox1.Size = new System.Drawing.Size(450, 151);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Відображення стовбчиків";
             // 
+            // VisibleRows
+            // 
+            this.VisibleRows.FormattingEnabled = true;
+            this.VisibleRows.Items.AddRange(new object[] {
+            "\"temp_immunization_id\",",
+            "\"legal_entity_id\",",
+            "\"division_identifier_value\",",
+            "\"status\",",
+            "\"not_given\",",
+            "\"vaccine_code\",",
+            "\"immunization_date\",",
+            "\"patient_age_group\",",
+            "\"patient_gender\",",
+            "\"manufacturer\",",
+            "\"lot_number\",",
+            "\"expiration_date\",",
+            "\"dose_quantity_unit\",",
+            "\"dose_quantity_value\",",
+            "\"vaccination_protocol_dose_sequence\",",
+            "\"vaccination_protocol_series\",",
+            "\"vaccination_protocol_series_doses\",",
+            "\"vaccination_protocol_target_diseases\",",
+            "\"inserted_at\",",
+            "\"updated_at\""});
+            this.VisibleRows.Location = new System.Drawing.Point(17, 19);
+            this.VisibleRows.MultiColumn = true;
+            this.VisibleRows.Name = "VisibleRows";
+            this.VisibleRows.Size = new System.Drawing.Size(411, 109);
+            this.VisibleRows.TabIndex = 14;
+            // 
             // SaveSettings
             // 
-            this.SaveSettings.Location = new System.Drawing.Point(372, 245);
+            this.SaveSettings.Location = new System.Drawing.Point(372, 276);
             this.SaveSettings.Name = "SaveSettings";
             this.SaveSettings.Size = new System.Drawing.Size(90, 23);
             this.SaveSettings.TabIndex = 4;
@@ -192,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 280);
+            this.ClientSize = new System.Drawing.Size(474, 311);
             this.Controls.Add(this.FontFamily);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.FontSize);
@@ -210,7 +230,6 @@
             this.Load += new System.EventHandler(this.GridSettingsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qOfPatientsOnPage)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,7 +239,6 @@
 
         private System.Windows.Forms.NumericUpDown qOfPatientsOnPage;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button SaveSettings;
         private System.Windows.Forms.Button UnPairColor;
@@ -231,5 +249,6 @@
         private System.Windows.Forms.ComboBox FontSize;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox FontFamily;
+        private System.Windows.Forms.CheckedListBox VisibleRows;
     }
 }

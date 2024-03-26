@@ -127,6 +127,9 @@ namespace Vactination_DB_Manager
         {
             MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
             mainGrid.changeCellsColor();
+            mainGrid.changeFontStyle();
+            mainGrid.changeColums();
+
         }
     }
 }

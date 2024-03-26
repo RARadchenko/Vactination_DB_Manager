@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,6 +35,14 @@ namespace Vactination_DB_Manager
         {
             MainGridVievSettings.q_of_patients_on_page = (int)qOfPatientsOnPage.Value;
             MainGridVievSettings.GridViewFont = new Font(FontFamily.Text, float.Parse(FontSize.Text));
+
+
+            for (int i = 0; i < VisibleRows.Items.Count; i++)
+            {
+                if (VisibleRows.GetItemChecked(i))
+                MainGridVievSettings.VisibleColums[i] = true;
+                else MainGridVievSettings.VisibleColums[i] = false;
+            }
             this.Close();
         }
 
@@ -44,6 +53,7 @@ namespace Vactination_DB_Manager
             PairColor.BackColor = MainGridVievSettings.CellColorBackground;
             FontSize.Text = MainGridVievSettings.GridViewFont.Size.ToString();
             FontFamily.Text = MainGridVievSettings.GridViewFont.Name.ToString();
+            makeColumsCheked();
         }
 
         private void PairColor_Click(object sender, EventArgs e)
@@ -56,6 +66,16 @@ namespace Vactination_DB_Manager
             if (MyDialog.ShowDialog() == DialogResult.OK)
                 MainGridVievSettings.CellColorBackground = MyDialog.Color;
                 PairColor.BackColor = MyDialog.Color;
+        }
+        private void makeColumsCheked()
+        {
+            for (int i = 0; i < VisibleRows.Items.Count; i++)
+            {
+                if (MainGridVievSettings.VisibleColums[i])
+                {
+                    VisibleRows.SetItemChecked(i, true);
+                }
+            }
         }
     }
 }
