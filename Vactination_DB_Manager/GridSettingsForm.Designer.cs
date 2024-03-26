@@ -28,28 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.qOfPatientsOnPage = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SaveSettings = new System.Windows.Forms.Button();
             this.UnPairColor = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.PairColor = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.qOfPatientsOnPage)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // numericUpDown1
+            // qOfPatientsOnPage
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(170, 13);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.qOfPatientsOnPage.Location = new System.Drawing.Point(170, 13);
+            this.qOfPatientsOnPage.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(52, 20);
-            this.numericUpDown1.TabIndex = 0;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.qOfPatientsOnPage.Name = "qOfPatientsOnPage";
+            this.qOfPatientsOnPage.Size = new System.Drawing.Size(52, 20);
+            this.qOfPatientsOnPage.TabIndex = 0;
+            this.qOfPatientsOnPage.Value = new decimal(new int[] {
             50,
             0,
             0,
@@ -96,27 +99,57 @@
             // 
             // UnPairColor
             // 
-            this.UnPairColor.Location = new System.Drawing.Point(12, 39);
+            this.UnPairColor.Location = new System.Drawing.Point(170, 39);
             this.UnPairColor.Name = "UnPairColor";
-            this.UnPairColor.Size = new System.Drawing.Size(163, 23);
+            this.UnPairColor.Size = new System.Drawing.Size(52, 23);
             this.UnPairColor.TabIndex = 6;
-            this.UnPairColor.Text = "Колір непарних записів";
             this.UnPairColor.UseVisualStyleBackColor = true;
             this.UnPairColor.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Колір непарних рядків";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Колір парних рядків";
+            // 
+            // PairColor
+            // 
+            this.PairColor.Location = new System.Drawing.Point(170, 71);
+            this.PairColor.Name = "PairColor";
+            this.PairColor.Size = new System.Drawing.Size(52, 23);
+            this.PairColor.TabIndex = 9;
+            this.PairColor.UseVisualStyleBackColor = true;
+            this.PairColor.Click += new System.EventHandler(this.PairColor_Click);
             // 
             // GridSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 280);
+            this.Controls.Add(this.PairColor);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.UnPairColor);
             this.Controls.Add(this.SaveSettings);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.qOfPatientsOnPage);
             this.Controls.Add(this.groupBox1);
             this.Name = "GridSettingsForm";
             this.Text = "GridSettingsForm";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.Load += new System.EventHandler(this.GridSettingsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.qOfPatientsOnPage)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -126,11 +159,14 @@
 
         #endregion
 
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown qOfPatientsOnPage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button SaveSettings;
         private System.Windows.Forms.Button UnPairColor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button PairColor;
     }
 }

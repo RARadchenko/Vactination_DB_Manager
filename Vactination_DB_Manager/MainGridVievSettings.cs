@@ -20,7 +20,7 @@ namespace Vactination_DB_Manager
 
         public static int q_of_patients_on_page { get; set; } = 50;
         public static Color alternativeCellColorBackground { get; set; } = Color.WhiteSmoke;
-        
+        public static Color CellColorBackground { get; set; } = Color.White;
 
         private void readLangsMasks()
         {
@@ -85,9 +85,10 @@ namespace Vactination_DB_Manager
             MainGridViev.Rows.Add(newRow);
         }
 
-        public void changeAltCellsColor()
+        public void changeCellsColor()
         {
             MainGridViev.AlternatingRowsDefaultCellStyle.BackColor = alternativeCellColorBackground;
+            MainGridViev.DefaultCellStyle.BackColor = CellColorBackground;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Vactination_DB_Manager
 {
     public partial class Form1 : Form
     {
-        private DataGridView mGV;
+        private MainGridVievSettings mGV;
         private DBFileManager dBFile;
 
         private int currentPage = 1;
@@ -36,7 +36,7 @@ namespace Vactination_DB_Manager
             MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
             mainGrid.startSettings();
 
-            mGV = MainGridViev;
+            mGV = mainGrid;
         }
         /// <summary>
         /// обробник таймеру поточної дати та часу
@@ -53,14 +53,14 @@ namespace Vactination_DB_Manager
 
         private void showLines(int start, int finish)
         {
-            MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
-            MainGridViev.Visible = false;
+            //MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
+            //MainGridViev.Visible = false;
             for (int i = start; i < finish; i++)
             {
-                mainGrid.addNewLine(dBFile.splitLine(dBFile.getOneLine(i)));
+                mGV.addNewLine(dBFile.splitLine(dBFile.getOneLine(i)));
                 toolStripProgressBar1.Value = (int)((double)((i - start) / (double)(finish - start)) * 100.0);
             }
-            MainGridViev.Visible = true;
+            //MainGridViev.Visible = true;
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,14 +74,15 @@ namespace Vactination_DB_Manager
                 dBFile.readDBFileLikeArrayOfLines();
                 maxPage = dBFile.LinesCount / MainGridVievSettings.q_of_patients_on_page;
                 PagesInfo.Text = $"{currentPage} page of {maxPage}";
-                showLines(1, MainGridVievSettings.q_of_patients_on_page+1);
+                showPage();
+                //showLines(1, MainGridVievSettings.q_of_patients_on_page+1);
             }
         }
 
         private void showPage()
         {
-            MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
-            mainGrid.refresh();
+            mGV.refresh();
+            maxPage = dBFile.LinesCount / MainGridVievSettings.q_of_patients_on_page;
             PagesInfo.Text = $"{currentPage} page of {maxPage}";
             showLines(currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1), currentPage * MainGridVievSettings.q_of_patients_on_page + 1);
         }
@@ -128,7 +129,7 @@ namespace Vactination_DB_Manager
         private void Form1_Activated(object sender, EventArgs e)
         {
             MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
-            mainGrid.changeAltCellsColor();
+            mainGrid.changeCellsColor();
         }
     }
 }

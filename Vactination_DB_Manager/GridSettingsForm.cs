@@ -22,18 +22,37 @@ namespace Vactination_DB_Manager
         {
             ColorDialog MyDialog = new ColorDialog();
             MyDialog.AllowFullOpen = true;
-            MyDialog.ShowHelp = true;
-            //MyDialog.Color;
             MyDialog.Color = MainGridVievSettings.alternativeCellColorBackground;
+            UnPairColor.BackColor = MyDialog.Color;
             // Update the text box color if the user clicks OK 
             if (MyDialog.ShowDialog() == DialogResult.OK)
                 MainGridVievSettings.alternativeCellColorBackground = MyDialog.Color;
+                UnPairColor.BackColor = MyDialog.Color;
         }
 
         private void SaveSettings_Click(object sender, EventArgs e)
         {
-            MainGridVievSettings.q_of_patients_on_page = (int)numericUpDown1.Value;
+            MainGridVievSettings.q_of_patients_on_page = (int)qOfPatientsOnPage.Value;
             this.Close();
+        }
+
+        private void GridSettingsForm_Load(object sender, EventArgs e)
+        {
+            qOfPatientsOnPage.Value = MainGridVievSettings.q_of_patients_on_page;
+            UnPairColor.BackColor = MainGridVievSettings.alternativeCellColorBackground;
+            PairColor.BackColor = MainGridVievSettings.CellColorBackground;
+        }
+
+        private void PairColor_Click(object sender, EventArgs e)
+        {
+            ColorDialog MyDialog = new ColorDialog();
+            MyDialog.AllowFullOpen = true;
+            MyDialog.Color = MainGridVievSettings.CellColorBackground;
+            PairColor.BackColor = MyDialog.Color;
+            // Update the text box color if the user clicks OK 
+            if (MyDialog.ShowDialog() == DialogResult.OK)
+                MainGridVievSettings.CellColorBackground = MyDialog.Color;
+                PairColor.BackColor = MyDialog.Color;
         }
     }
 }
