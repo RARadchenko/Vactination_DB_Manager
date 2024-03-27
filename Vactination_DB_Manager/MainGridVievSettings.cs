@@ -28,7 +28,7 @@ namespace Vactination_DB_Manager
             //"vaccination_protocol_series","vaccination_protocol_series_doses","vaccination_protocol_target_diseases","inserted_at","updated_at"
             true, true, true, true, true
         };
-        public static int q_of_patients_on_page { get; set; } = 50;
+        public static int q_of_patients_on_page { get; set; } = 40;
         public static Color alternativeCellColorBackground { get; set; } = Color.WhiteSmoke;
         public static Color CellColorBackground { get; set; } = Color.White;
         public static Font GridViewFont { get; set; } = new Font("Microsoft Sans Serif", 8F);

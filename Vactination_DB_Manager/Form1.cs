@@ -61,6 +61,7 @@ namespace Vactination_DB_Manager
             {
                 dBFile = new DBFileManager(openFileDialog.FileName);
                 dBFile.readDBFileLikeArrayOfLines();
+                Patient patient = new Patient(dBFile.getOneLine(1));
                 maxPage = dBFile.LinesCount / MainGridVievSettings.q_of_patients_on_page;
                 PagesInfo.Text = $"{currentPage} page of {maxPage}";
                 showPage();

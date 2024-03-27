@@ -61,26 +61,26 @@ namespace Vactination_DB_Manager {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на &quot;temp_immunization_id&quot;,
-        ///&quot;legal_entity_id&quot;,
-        ///&quot;division_identifier_value&quot;,
-        ///&quot;status&quot;,
-        ///&quot;not_given&quot;,
-        ///&quot;vaccine_code&quot;,
-        ///&quot;immunization_date&quot;,
-        ///&quot;patient_age_group&quot;,
-        ///&quot;patient_gender&quot;,
-        ///&quot;manufacturer&quot;,
-        ///&quot;lot_number&quot;,
-        ///&quot;expiration_date&quot;,
-        ///&quot;dose_quantity_unit&quot;,
-        ///&quot;dose_quantity_value&quot;,
-        ///&quot;vaccination_protocol_dose_sequence&quot;,
-        ///&quot;vaccination_protocol_series&quot;,
-        ///&quot;vaccination_protocol_series_doses&quot;,
-        ///&quot;vaccination_protocol_target_diseases&quot;,
-        ///&quot;inserted_at&quot;,
-        ///&quot;updated_at&quot;.
+        ///   Ищет локализованную строку, похожую на temp immunization id,
+        ///legal entity id,
+        ///division identifier value,
+        ///status,
+        ///not given,
+        ///vaccine code,
+        ///immunization date,
+        ///patient age group,
+        ///patient gender,
+        ///manufacturer,
+        ///lot number,
+        ///expiration date,
+        ///dose quantity unit,
+        ///dose quantity value,
+        ///vaccination protocol dose sequence,
+        ///vaccination protocol series,
+        ///vaccination protocol series doses,
+        ///vaccination protocol target diseases,
+        ///inserted at,
+        ///updated at.
         /// </summary>
         public static string EN_lang_grid_mask {
             get {
