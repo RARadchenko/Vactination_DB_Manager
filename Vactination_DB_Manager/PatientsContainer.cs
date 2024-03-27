@@ -22,5 +22,14 @@ namespace Vactination_DB_Manager
         {
             PatientsList.Add(patient);
         }
+        public void removePatient(Patient patient)
+        {
+            PatientsList.Remove(patient); 
+        }
+        public string[] getOnePatient(int index)
+        {
+            if (index < PatientsList.Count) return PatientsList[index].getMass();
+            else return new string[] { "Error file haven`t than line" };
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace Vactination_DB_Manager
     {
         private MainGridVievSettings mGV;
         private DBFileManager dBFile;
+        private PatientsContainer patientsContainer;
 
         private int currentPage = 1;
         private int maxPage = 1;
@@ -31,6 +32,8 @@ namespace Vactination_DB_Manager
             StatusTimeTimer.Enabled = true;
             StatusTimeTimer.Interval = 100;
             StatusTimeTimer.Start();
+
+            patientsContainer = new PatientsContainer();
 
             //налаштування mainGridViev
             MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
@@ -60,9 +63,13 @@ namespace Vactination_DB_Manager
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 dBFile = new DBFileManager(openFileDialog.FileName);
-                dBFile.readDBFileLikeArrayOfLines();
-                Patient patient = new Patient(dBFile.getOneLine(1));
-                maxPage = dBFile.LinesCount / MainGridVievSettings.q_of_patients_on_page;
+                string[] readedLines = dBFile.readDBFileLikeArrayOfLines();
+                for(int i = 1; i < readedLines.Length; i++)
+                {
+                    Patient patient = new Patient(readedLines[i]);
+                    patientsContainer.addPatient(patient);
+                }
+                maxPage = patientsContainer.PatientsList.Count / MainGridVievSettings.q_of_patients_on_page;
                 PagesInfo.Text = $"{currentPage} page of {maxPage}";
                 showPage();
                 //showLines(1, MainGridVievSettings.q_of_patients_on_page+1);
@@ -72,14 +79,14 @@ namespace Vactination_DB_Manager
         private void showPage()
         {
             mGV.refresh();
-            maxPage = dBFile.LinesCount / MainGridVievSettings.q_of_patients_on_page;
+            maxPage = patientsContainer.PatientsList.Count / MainGridVievSettings.q_of_patients_on_page;
             PagesInfo.Text = $"{currentPage} page of {maxPage}";
             int start = currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1);
             int finish = currentPage * MainGridVievSettings.q_of_patients_on_page + 1;
-
+            //string[] mama = patientsContainer.getOnePatient(439);
             for (int i = start; i < finish; i++)
             {
-                mGV.addNewLine(dBFile.splitLine(dBFile.getOneLine(i)));
+                mGV.addNewLine(patientsContainer.getOnePatient(i));
                 toolStripProgressBar1.Value = (int)((double)((i - start) / (double)(finish - start)) * 100.0);
             }
             //showLines(currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1), currentPage * MainGridVievSettings.q_of_patients_on_page + 1);
