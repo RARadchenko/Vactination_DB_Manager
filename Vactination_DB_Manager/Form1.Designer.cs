@@ -48,11 +48,13 @@
             this.українськаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainGridViev = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.pageNumberInput = new System.Windows.Forms.ToolStripTextBox();
             this.ExampleButton1 = new System.Windows.Forms.ToolStripButton();
             this.PrevPage = new System.Windows.Forms.ToolStripButton();
             this.NextPage = new System.Windows.Forms.ToolStripButton();
-            this.pageNumberInput = new System.Windows.Forms.ToolStripTextBox();
             this.goToPage = new System.Windows.Forms.ToolStripButton();
+            this.ExportToPDF = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainGridViev)).BeginInit();
@@ -170,6 +172,8 @@
             this.MainGridViev.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.MainGridViev, "MainGridViev");
             this.MainGridViev.Name = "MainGridViev";
+            this.MainGridViev.ReadOnly = true;
+            this.MainGridViev.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MainGridViev_CellClick);
             // 
             // toolStrip1
             // 
@@ -180,8 +184,17 @@
             this.PrevPage,
             this.NextPage,
             this.pageNumberInput,
-            this.goToPage});
+            this.goToPage,
+            this.ExportToPDF,
+            this.toolStripButton1});
             this.toolStrip1.Name = "toolStrip1";
+            // 
+            // pageNumberInput
+            // 
+            this.pageNumberInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.pageNumberInput, "pageNumberInput");
+            this.pageNumberInput.Name = "pageNumberInput";
+            this.pageNumberInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pageNumberInput_KeyPress);
             // 
             // ExampleButton1
             // 
@@ -205,13 +218,6 @@
             this.NextPage.Name = "NextPage";
             this.NextPage.Click += new System.EventHandler(this.NextPage_Click);
             // 
-            // pageNumberInput
-            // 
-            this.pageNumberInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.pageNumberInput, "pageNumberInput");
-            this.pageNumberInput.Name = "pageNumberInput";
-            this.pageNumberInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pageNumberInput_KeyPress);
-            // 
             // goToPage
             // 
             this.goToPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -219,6 +225,20 @@
             resources.ApplyResources(this.goToPage, "goToPage");
             this.goToPage.Name = "goToPage";
             this.goToPage.Click += new System.EventHandler(this.goToPage_Click);
+            // 
+            // ExportToPDF
+            // 
+            this.ExportToPDF.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ExportToPDF.Image = global::Vactination_DB_Manager.Properties.Resources.PDF1;
+            resources.ApplyResources(this.ExportToPDF, "ExportToPDF");
+            this.ExportToPDF.Name = "ExportToPDF";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::Vactination_DB_Manager.Properties.Resources.sortv2;
+            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
+            this.toolStripButton1.Name = "toolStripButton1";
             // 
             // Form1
             // 
@@ -271,6 +291,8 @@
         private System.Windows.Forms.ToolStripStatusLabel PagesInfo;
         private System.Windows.Forms.ToolStripButton goToPage;
         private System.Windows.Forms.ToolStripTextBox pageNumberInput;
+        private System.Windows.Forms.ToolStripButton ExportToPDF;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

@@ -115,5 +115,17 @@
   <ItemGroup>
     <None Include="Resources\lookPage.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDF1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sortv2.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
