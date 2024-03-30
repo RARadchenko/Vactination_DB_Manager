@@ -129,5 +129,8 @@
   <ItemGroup>
     <None Include="Resources\sortv2.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sortv22.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

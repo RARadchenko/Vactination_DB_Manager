@@ -48,13 +48,35 @@
             this.українськаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainGridViev = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.pageNumberInput = new System.Windows.Forms.ToolStripTextBox();
             this.ExampleButton1 = new System.Windows.Forms.ToolStripButton();
+            this.ExportToPDF = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.PrevPage = new System.Windows.Forms.ToolStripButton();
             this.NextPage = new System.Windows.Forms.ToolStripButton();
+            this.pageNumberInput = new System.Windows.Forms.ToolStripTextBox();
             this.goToPage = new System.Windows.Forms.ToolStripButton();
-            this.ExportToPDF = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.SortingMenu = new System.Windows.Forms.ToolStripSplitButton();
+            this.tempImmunizationId = new System.Windows.Forms.ToolStripMenuItem();
+            this.iDЮридичноїОсобиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iDЗакладуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.статусToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.неНаданоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.кодВакциниToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.датаІмунізаціїToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.віковаГрупаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.статьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.виробникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.номерПартіїToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.придатнаДоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.одиниціВиміруДозиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.значенняДозиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.послідовністьДозВакцинаційногоПротоколуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.серіяВакцинаційногоПротоколуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.дозиСеріїВакцинаційногоПротоколуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.цільовіЗахворюванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вставленоВToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оновленоВToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainGridViev)).BeginInit();
@@ -181,26 +203,33 @@
             this.toolStrip1.GripMargin = new System.Windows.Forms.Padding(0);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ExampleButton1,
+            this.ExportToPDF,
+            this.toolStripSeparator1,
             this.PrevPage,
             this.NextPage,
             this.pageNumberInput,
             this.goToPage,
-            this.ExportToPDF,
-            this.toolStripButton1});
+            this.toolStripSeparator2,
+            this.SortingMenu});
             this.toolStrip1.Name = "toolStrip1";
-            // 
-            // pageNumberInput
-            // 
-            this.pageNumberInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.pageNumberInput, "pageNumberInput");
-            this.pageNumberInput.Name = "pageNumberInput";
-            this.pageNumberInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pageNumberInput_KeyPress);
             // 
             // ExampleButton1
             // 
             this.ExampleButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.ExampleButton1, "ExampleButton1");
             this.ExampleButton1.Name = "ExampleButton1";
+            // 
+            // ExportToPDF
+            // 
+            this.ExportToPDF.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ExportToPDF.Image = global::Vactination_DB_Manager.Properties.Resources.PDF1;
+            resources.ApplyResources(this.ExportToPDF, "ExportToPDF");
+            this.ExportToPDF.Name = "ExportToPDF";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // PrevPage
             // 
@@ -218,6 +247,13 @@
             this.NextPage.Name = "NextPage";
             this.NextPage.Click += new System.EventHandler(this.NextPage_Click);
             // 
+            // pageNumberInput
+            // 
+            this.pageNumberInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.pageNumberInput, "pageNumberInput");
+            this.pageNumberInput.Name = "pageNumberInput";
+            this.pageNumberInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pageNumberInput_KeyPress);
+            // 
             // goToPage
             // 
             this.goToPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -226,19 +262,159 @@
             this.goToPage.Name = "goToPage";
             this.goToPage.Click += new System.EventHandler(this.goToPage_Click);
             // 
-            // ExportToPDF
+            // toolStripSeparator2
             // 
-            this.ExportToPDF.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ExportToPDF.Image = global::Vactination_DB_Manager.Properties.Resources.PDF1;
-            resources.ApplyResources(this.ExportToPDF, "ExportToPDF");
-            this.ExportToPDF.Name = "ExportToPDF";
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
-            // toolStripButton1
+            // SortingMenu
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Vactination_DB_Manager.Properties.Resources.sortv2;
-            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
-            this.toolStripButton1.Name = "toolStripButton1";
+            this.SortingMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SortingMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tempImmunizationId,
+            this.iDЮридичноїОсобиToolStripMenuItem,
+            this.iDЗакладуToolStripMenuItem,
+            this.статусToolStripMenuItem,
+            this.неНаданоToolStripMenuItem,
+            this.кодВакциниToolStripMenuItem,
+            this.датаІмунізаціїToolStripMenuItem,
+            this.віковаГрупаToolStripMenuItem,
+            this.статьToolStripMenuItem,
+            this.виробникToolStripMenuItem,
+            this.номерПартіїToolStripMenuItem,
+            this.придатнаДоToolStripMenuItem,
+            this.одиниціВиміруДозиToolStripMenuItem,
+            this.значенняДозиToolStripMenuItem,
+            this.послідовністьДозВакцинаційногоПротоколуToolStripMenuItem,
+            this.серіяВакцинаційногоПротоколуToolStripMenuItem,
+            this.дозиСеріїВакцинаційногоПротоколуToolStripMenuItem,
+            this.цільовіЗахворюванняToolStripMenuItem,
+            this.вставленоВToolStripMenuItem,
+            this.оновленоВToolStripMenuItem});
+            this.SortingMenu.Image = global::Vactination_DB_Manager.Properties.Resources.sortv2;
+            resources.ApplyResources(this.SortingMenu, "SortingMenu");
+            this.SortingMenu.Name = "SortingMenu";
+            this.SortingMenu.ButtonClick += new System.EventHandler(this.SortingMenu_Click);
+            // 
+            // tempImmunizationId
+            // 
+            this.tempImmunizationId.Name = "tempImmunizationId";
+            resources.ApplyResources(this.tempImmunizationId, "tempImmunizationId");
+            this.tempImmunizationId.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // iDЮридичноїОсобиToolStripMenuItem
+            // 
+            this.iDЮридичноїОсобиToolStripMenuItem.Name = "iDЮридичноїОсобиToolStripMenuItem";
+            resources.ApplyResources(this.iDЮридичноїОсобиToolStripMenuItem, "iDЮридичноїОсобиToolStripMenuItem");
+            this.iDЮридичноїОсобиToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // iDЗакладуToolStripMenuItem
+            // 
+            this.iDЗакладуToolStripMenuItem.Name = "iDЗакладуToolStripMenuItem";
+            resources.ApplyResources(this.iDЗакладуToolStripMenuItem, "iDЗакладуToolStripMenuItem");
+            this.iDЗакладуToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // статусToolStripMenuItem
+            // 
+            this.статусToolStripMenuItem.Name = "статусToolStripMenuItem";
+            resources.ApplyResources(this.статусToolStripMenuItem, "статусToolStripMenuItem");
+            this.статусToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // неНаданоToolStripMenuItem
+            // 
+            this.неНаданоToolStripMenuItem.Name = "неНаданоToolStripMenuItem";
+            resources.ApplyResources(this.неНаданоToolStripMenuItem, "неНаданоToolStripMenuItem");
+            this.неНаданоToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // кодВакциниToolStripMenuItem
+            // 
+            this.кодВакциниToolStripMenuItem.Name = "кодВакциниToolStripMenuItem";
+            resources.ApplyResources(this.кодВакциниToolStripMenuItem, "кодВакциниToolStripMenuItem");
+            this.кодВакциниToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // датаІмунізаціїToolStripMenuItem
+            // 
+            this.датаІмунізаціїToolStripMenuItem.Name = "датаІмунізаціїToolStripMenuItem";
+            resources.ApplyResources(this.датаІмунізаціїToolStripMenuItem, "датаІмунізаціїToolStripMenuItem");
+            this.датаІмунізаціїToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // віковаГрупаToolStripMenuItem
+            // 
+            this.віковаГрупаToolStripMenuItem.Name = "віковаГрупаToolStripMenuItem";
+            resources.ApplyResources(this.віковаГрупаToolStripMenuItem, "віковаГрупаToolStripMenuItem");
+            this.віковаГрупаToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // статьToolStripMenuItem
+            // 
+            this.статьToolStripMenuItem.Name = "статьToolStripMenuItem";
+            resources.ApplyResources(this.статьToolStripMenuItem, "статьToolStripMenuItem");
+            this.статьToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // виробникToolStripMenuItem
+            // 
+            this.виробникToolStripMenuItem.Name = "виробникToolStripMenuItem";
+            resources.ApplyResources(this.виробникToolStripMenuItem, "виробникToolStripMenuItem");
+            this.виробникToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // номерПартіїToolStripMenuItem
+            // 
+            this.номерПартіїToolStripMenuItem.Name = "номерПартіїToolStripMenuItem";
+            resources.ApplyResources(this.номерПартіїToolStripMenuItem, "номерПартіїToolStripMenuItem");
+            this.номерПартіїToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // придатнаДоToolStripMenuItem
+            // 
+            this.придатнаДоToolStripMenuItem.Name = "придатнаДоToolStripMenuItem";
+            resources.ApplyResources(this.придатнаДоToolStripMenuItem, "придатнаДоToolStripMenuItem");
+            this.придатнаДоToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // одиниціВиміруДозиToolStripMenuItem
+            // 
+            this.одиниціВиміруДозиToolStripMenuItem.Name = "одиниціВиміруДозиToolStripMenuItem";
+            resources.ApplyResources(this.одиниціВиміруДозиToolStripMenuItem, "одиниціВиміруДозиToolStripMenuItem");
+            this.одиниціВиміруДозиToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // значенняДозиToolStripMenuItem
+            // 
+            this.значенняДозиToolStripMenuItem.Name = "значенняДозиToolStripMenuItem";
+            resources.ApplyResources(this.значенняДозиToolStripMenuItem, "значенняДозиToolStripMenuItem");
+            this.значенняДозиToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // послідовністьДозВакцинаційногоПротоколуToolStripMenuItem
+            // 
+            this.послідовністьДозВакцинаційногоПротоколуToolStripMenuItem.Name = "послідовністьДозВакцинаційногоПротоколуToolStripMenuItem";
+            resources.ApplyResources(this.послідовністьДозВакцинаційногоПротоколуToolStripMenuItem, "послідовністьДозВакцинаційногоПротоколуToolStripMenuItem");
+            this.послідовністьДозВакцинаційногоПротоколуToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // серіяВакцинаційногоПротоколуToolStripMenuItem
+            // 
+            this.серіяВакцинаційногоПротоколуToolStripMenuItem.Name = "серіяВакцинаційногоПротоколуToolStripMenuItem";
+            resources.ApplyResources(this.серіяВакцинаційногоПротоколуToolStripMenuItem, "серіяВакцинаційногоПротоколуToolStripMenuItem");
+            this.серіяВакцинаційногоПротоколуToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // дозиСеріїВакцинаційногоПротоколуToolStripMenuItem
+            // 
+            this.дозиСеріїВакцинаційногоПротоколуToolStripMenuItem.Name = "дозиСеріїВакцинаційногоПротоколуToolStripMenuItem";
+            resources.ApplyResources(this.дозиСеріїВакцинаційногоПротоколуToolStripMenuItem, "дозиСеріїВакцинаційногоПротоколуToolStripMenuItem");
+            this.дозиСеріїВакцинаційногоПротоколуToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // цільовіЗахворюванняToolStripMenuItem
+            // 
+            this.цільовіЗахворюванняToolStripMenuItem.Name = "цільовіЗахворюванняToolStripMenuItem";
+            resources.ApplyResources(this.цільовіЗахворюванняToolStripMenuItem, "цільовіЗахворюванняToolStripMenuItem");
+            this.цільовіЗахворюванняToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // вставленоВToolStripMenuItem
+            // 
+            this.вставленоВToolStripMenuItem.Name = "вставленоВToolStripMenuItem";
+            resources.ApplyResources(this.вставленоВToolStripMenuItem, "вставленоВToolStripMenuItem");
+            this.вставленоВToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
+            // 
+            // оновленоВToolStripMenuItem
+            // 
+            this.оновленоВToolStripMenuItem.Name = "оновленоВToolStripMenuItem";
+            resources.ApplyResources(this.оновленоВToolStripMenuItem, "оновленоВToolStripMenuItem");
+            this.оновленоВToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
             // 
             // Form1
             // 
@@ -292,7 +468,29 @@
         private System.Windows.Forms.ToolStripButton goToPage;
         private System.Windows.Forms.ToolStripTextBox pageNumberInput;
         private System.Windows.Forms.ToolStripButton ExportToPDF;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSplitButton SortingMenu;
+        private System.Windows.Forms.ToolStripMenuItem tempImmunizationId;
+        private System.Windows.Forms.ToolStripMenuItem iDЮридичноїОсобиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem iDЗакладуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem статусToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem неНаданоToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem датаІмунізаціїToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem віковаГрупаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem статьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem виробникToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem номерПартіїToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem придатнаДоToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem одиниціВиміруДозиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem значенняДозиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem послідовністьДозВакцинаційногоПротоколуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem серіяВакцинаційногоПротоколуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem цільовіЗахворюванняToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem вставленоВToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem оновленоВToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem кодВакциниToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem дозиСеріїВакцинаційногоПротоколуToolStripMenuItem;
     }
 }
 

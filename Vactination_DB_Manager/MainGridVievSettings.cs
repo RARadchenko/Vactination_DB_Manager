@@ -15,8 +15,8 @@ namespace Vactination_DB_Manager
         private System.Windows.Forms.DataGridView MainGridViev;
         private string chosen_lang = "en";
 
-        private string[] en_lang_mask = { };
-        private string[] ua_lang_mask = { };
+        public string[] en_lang_mask = { };
+        public string[] ua_lang_mask = { };
 
         public static bool[] VisibleColums = { 
             //"temp_immunization_id","legal_entity_id","division_identifier_value","status","not_given"
@@ -38,8 +38,8 @@ namespace Vactination_DB_Manager
             ResourceManager resourceManager = new ResourceManager("Vactination_DB_Manager.GridViewLangMasks", typeof(MainGridVievSettings).Assembly);
 
             // Зчитування масок з файлу ресурсів
-            en_lang_mask = resourceManager.GetString("EN_lang_grid_mask").Split(',');
-            ua_lang_mask = resourceManager.GetString("UA_lang_grid_mask").Split(',');
+            en_lang_mask = resourceManager.GetString("EN_lang_grid_mask").Replace(Environment.NewLine, "").Split(',');
+            ua_lang_mask = resourceManager.GetString("UA_lang_grid_mask").Replace(Environment.NewLine, "").Split(',');
         }
 
         public MainGridVievSettings(System.Windows.Forms.DataGridView MainGridViev, string lang) 

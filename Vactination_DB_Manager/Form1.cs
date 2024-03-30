@@ -21,6 +21,7 @@ namespace Vactination_DB_Manager
 
         private int currentPage = 1;
         private int maxPage = 1;
+        private bool reverseSort = false;
         public Form1()
         {
             InitializeComponent();
@@ -155,6 +156,30 @@ namespace Vactination_DB_Manager
                 }
                 MessageBox.Show(message.ToString(), "Значення рядка");
             }
+        }
+
+
+        private void SortingMenu_Click(object sender, EventArgs e)
+        {
+            if (!reverseSort)
+            {
+                SortingMenu.Image = Vactination_DB_Manager.Properties.Resources.sortv22;
+            }
+            else
+            {
+                SortingMenu.Image = Vactination_DB_Manager.Properties.Resources.sortv2;
+            }
+            reverseSort = !reverseSort;
+            patientsContainer.reversePatients();
+            showPage();
+        }
+
+        private void sortSelect_Click(object sender, EventArgs e)
+        {
+            int selected = Array.IndexOf(mGV.ua_lang_mask, sender.ToString());
+            patientsContainer.SortByArg(selected, reverseSort);
+            showPage();
+            //MessageBox.Show(selected.ToString() + string.Join("|", mGV.ua_lang_mask) + sender.ToString(), "Значення рядка");
         }
     }
 }

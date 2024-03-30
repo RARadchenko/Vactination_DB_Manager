@@ -231,13 +231,13 @@
     <value>Вигляд</value>
   </data>
   <data name="gridSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 26</value>
+    <value>140, 26</value>
   </data>
   <data name="gridSettings.Text" xml:space="preserve">
     <value>Таблиця</value>
   </data>
   <data name="LangToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 26</value>
+    <value>140, 26</value>
   </data>
   <data name="LangToolStripMenuItem.Text" xml:space="preserve">
     <value>Мова</value>
@@ -281,42 +281,6 @@
   <data name="toolStrip1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
-  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 29</value>
-  </data>
-  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1902, 39</value>
-  </data>
-  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="toolStrip1.Text" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pageNumberInput.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="pageNumberInput.MaxLength" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="pageNumberInput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 39</value>
-  </data>
-  <data name="pageNumberInput.Text" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="ExampleButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -340,6 +304,21 @@
   </data>
   <data name="ExampleButton1.Text" xml:space="preserve">
     <value>Зберегти</value>
+  </data>
+  <data name="ExportToPDF.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ExportToPDF.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ExportToPDF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="ExportToPDF.Text" xml:space="preserve">
+    <value>Експорт в PDF</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 39</value>
   </data>
   <data name="PrevPage.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
@@ -365,6 +344,18 @@
   <data name="NextPage.Text" xml:space="preserve">
     <value>Наступна сторінка</value>
   </data>
+  <data name="pageNumberInput.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="pageNumberInput.MaxLength" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="pageNumberInput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 39</value>
+  </data>
+  <data name="pageNumberInput.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="goToPage.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -380,29 +371,164 @@
   <data name="goToPage.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="ExportToPDF.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 39</value>
+  </data>
+  <data name="tempImmunizationId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="tempImmunizationId.Text" xml:space="preserve">
+    <value>ID тимчасової імунізації</value>
+  </data>
+  <data name="iDЮридичноїОсобиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="iDЮридичноїОсобиToolStripMenuItem.Text" xml:space="preserve">
+    <value>ID юридичної особи</value>
+  </data>
+  <data name="iDЗакладуToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="iDЗакладуToolStripMenuItem.Text" xml:space="preserve">
+    <value>ID Закладу</value>
+  </data>
+  <data name="статусToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="статусToolStripMenuItem.Text" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="неНаданоToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="неНаданоToolStripMenuItem.Text" xml:space="preserve">
+    <value>Не надано</value>
+  </data>
+  <data name="кодВакциниToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="кодВакциниToolStripMenuItem.Text" xml:space="preserve">
+    <value>Код вакцини</value>
+  </data>
+  <data name="датаІмунізаціїToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="датаІмунізаціїToolStripMenuItem.Text" xml:space="preserve">
+    <value>Дата імунізації</value>
+  </data>
+  <data name="віковаГрупаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="віковаГрупаToolStripMenuItem.Text" xml:space="preserve">
+    <value>Вікова група</value>
+  </data>
+  <data name="статьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="статьToolStripMenuItem.Text" xml:space="preserve">
+    <value>Стать</value>
+  </data>
+  <data name="виробникToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="виробникToolStripMenuItem.Text" xml:space="preserve">
+    <value>Виробник</value>
+  </data>
+  <data name="номерПартіїToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="номерПартіїToolStripMenuItem.Text" xml:space="preserve">
+    <value>Номер партії</value>
+  </data>
+  <data name="придатнаДоToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="придатнаДоToolStripMenuItem.Text" xml:space="preserve">
+    <value>Придатна до</value>
+  </data>
+  <data name="одиниціВиміруДозиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="одиниціВиміруДозиToolStripMenuItem.Text" xml:space="preserve">
+    <value>Одиниці виміру дози</value>
+  </data>
+  <data name="значенняДозиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="значенняДозиToolStripMenuItem.Text" xml:space="preserve">
+    <value>Значення</value>
+  </data>
+  <data name="послідовністьДозВакцинаційногоПротоколуToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="послідовністьДозВакцинаційногоПротоколуToolStripMenuItem.Text" xml:space="preserve">
+    <value>Послідовність доз вакцинаційного протоколу</value>
+  </data>
+  <data name="серіяВакцинаційногоПротоколуToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="серіяВакцинаційногоПротоколуToolStripMenuItem.Text" xml:space="preserve">
+    <value>Серія вакцинаційного протоколу</value>
+  </data>
+  <data name="дозиСеріїВакцинаційногоПротоколуToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="дозиСеріїВакцинаційногоПротоколуToolStripMenuItem.Text" xml:space="preserve">
+    <value>Дози серії вакцинаційного протоколу</value>
+  </data>
+  <data name="цільовіЗахворюванняToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="цільовіЗахворюванняToolStripMenuItem.Text" xml:space="preserve">
+    <value>Цільові захворювання</value>
+  </data>
+  <data name="вставленоВToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="вставленоВToolStripMenuItem.Text" xml:space="preserve">
+    <value>Вставлено в</value>
+  </data>
+  <data name="оновленоВToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="оновленоВToolStripMenuItem.Text" xml:space="preserve">
+    <value>Оновлено в</value>
+  </data>
+  <data name="SortingMenu.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ExportToPDF.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="SortingMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="ExportToPDF.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
+  <data name="SortingMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 36</value>
   </data>
-  <data name="ExportToPDF.Text" xml:space="preserve">
-    <value>Експорт в PDF</value>
+  <data name="SortingMenu.Text" xml:space="preserve">
+    <value>toolStripSplitButton1</value>
   </data>
-  <data name="toolStripButton1.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
+  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 29</value>
   </data>
-  <data name="toolStripButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
+  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1902, 39</value>
   </data>
-  <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
+  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="toolStripButton1.Text" xml:space="preserve">
-    <value>Сортування</value>
+  <data name="toolStrip1.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -565,17 +691,23 @@
   <data name="&gt;&gt;українськаToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pageNumberInput.Name" xml:space="preserve">
-    <value>pageNumberInput</value>
-  </data>
-  <data name="&gt;&gt;pageNumberInput.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ExampleButton1.Name" xml:space="preserve">
     <value>ExampleButton1</value>
   </data>
   <data name="&gt;&gt;ExampleButton1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExportToPDF.Name" xml:space="preserve">
+    <value>ExportToPDF</value>
+  </data>
+  <data name="&gt;&gt;ExportToPDF.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PrevPage.Name" xml:space="preserve">
     <value>PrevPage</value>
@@ -589,23 +721,149 @@
   <data name="&gt;&gt;NextPage.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;pageNumberInput.Name" xml:space="preserve">
+    <value>pageNumberInput</value>
+  </data>
+  <data name="&gt;&gt;pageNumberInput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;goToPage.Name" xml:space="preserve">
     <value>goToPage</value>
   </data>
   <data name="&gt;&gt;goToPage.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ExportToPDF.Name" xml:space="preserve">
-    <value>ExportToPDF</value>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
   </data>
-  <data name="&gt;&gt;ExportToPDF.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
-    <value>toolStripButton1</value>
+  <data name="&gt;&gt;SortingMenu.Name" xml:space="preserve">
+    <value>SortingMenu</value>
   </data>
-  <data name="&gt;&gt;toolStripButton1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;SortingMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tempImmunizationId.Name" xml:space="preserve">
+    <value>tempImmunizationId</value>
+  </data>
+  <data name="&gt;&gt;tempImmunizationId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iDЮридичноїОсобиToolStripMenuItem.Name" xml:space="preserve">
+    <value>iDЮридичноїОсобиToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;iDЮридичноїОсобиToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iDЗакладуToolStripMenuItem.Name" xml:space="preserve">
+    <value>iDЗакладуToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;iDЗакладуToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;статусToolStripMenuItem.Name" xml:space="preserve">
+    <value>статусToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;статусToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;неНаданоToolStripMenuItem.Name" xml:space="preserve">
+    <value>неНаданоToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;неНаданоToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;кодВакциниToolStripMenuItem.Name" xml:space="preserve">
+    <value>кодВакциниToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;кодВакциниToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;датаІмунізаціїToolStripMenuItem.Name" xml:space="preserve">
+    <value>датаІмунізаціїToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;датаІмунізаціїToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;віковаГрупаToolStripMenuItem.Name" xml:space="preserve">
+    <value>віковаГрупаToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;віковаГрупаToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;статьToolStripMenuItem.Name" xml:space="preserve">
+    <value>статьToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;статьToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;виробникToolStripMenuItem.Name" xml:space="preserve">
+    <value>виробникToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;виробникToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;номерПартіїToolStripMenuItem.Name" xml:space="preserve">
+    <value>номерПартіїToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;номерПартіїToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;придатнаДоToolStripMenuItem.Name" xml:space="preserve">
+    <value>придатнаДоToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;придатнаДоToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;одиниціВиміруДозиToolStripMenuItem.Name" xml:space="preserve">
+    <value>одиниціВиміруДозиToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;одиниціВиміруДозиToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;значенняДозиToolStripMenuItem.Name" xml:space="preserve">
+    <value>значенняДозиToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;значенняДозиToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;послідовністьДозВакцинаційногоПротоколуToolStripMenuItem.Name" xml:space="preserve">
+    <value>послідовністьДозВакцинаційногоПротоколуToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;послідовністьДозВакцинаційногоПротоколуToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;серіяВакцинаційногоПротоколуToolStripMenuItem.Name" xml:space="preserve">
+    <value>серіяВакцинаційногоПротоколуToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;серіяВакцинаційногоПротоколуToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;дозиСеріїВакцинаційногоПротоколуToolStripMenuItem.Name" xml:space="preserve">
+    <value>дозиСеріїВакцинаційногоПротоколуToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;дозиСеріїВакцинаційногоПротоколуToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;цільовіЗахворюванняToolStripMenuItem.Name" xml:space="preserve">
+    <value>цільовіЗахворюванняToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;цільовіЗахворюванняToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;вставленоВToolStripMenuItem.Name" xml:space="preserve">
+    <value>вставленоВToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;вставленоВToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;оновленоВToolStripMenuItem.Name" xml:space="preserve">
+    <value>оновленоВToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;оновленоВToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>
