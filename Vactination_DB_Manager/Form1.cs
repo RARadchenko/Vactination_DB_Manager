@@ -64,6 +64,7 @@ namespace Vactination_DB_Manager
             {
                 dBFile = new DBFileManager(openFileDialog.FileName);
                 string[] readedLines = dBFile.readDBFileLikeArrayOfLines();
+                patientsContainer.clearPatients();
                 for(int i = 1; i < readedLines.Length; i++)
                 {
                     Patient patient = new Patient(readedLines[i]);

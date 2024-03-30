@@ -26,6 +26,10 @@ namespace Vactination_DB_Manager
         {
             PatientsList.Remove(patient); 
         }
+        public void clearPatients()
+        {
+            PatientsList.Clear();
+        }
         public string[] getOnePatient(int index)
         {
             if (index < PatientsList.Count) return PatientsList[index].getMass();
