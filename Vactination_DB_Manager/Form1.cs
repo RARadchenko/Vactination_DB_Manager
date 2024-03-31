@@ -146,15 +146,10 @@ namespace Vactination_DB_Manager
         {
             if (e.RowIndex >= 0 && e.RowIndex < MainGridViev.Rows.Count - 1)
             {
-                DataGridViewRow row = MainGridViev.Rows[e.RowIndex];
-                StringBuilder message = new StringBuilder();
-
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    message.Append(cell.Value.ToString());
-                    message.Append(Environment.NewLine);
-                }
-                MessageBox.Show(message.ToString(), "Значення рядка");
+                //DataGridViewRow row = MainGridViev.Rows[e.RowIndex];
+                int pageIndex = currentPage == 0 ? 1 : (currentPage - 1) * MainGridVievSettings.q_of_patients_on_page;
+                PatientEditor patientEditor = new PatientEditor(patientsContainer.PatientsList[(e.RowIndex + 1) + (pageIndex)]);
+                patientEditor.ShowDialog();
             }
         }
 

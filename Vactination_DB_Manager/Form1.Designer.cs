@@ -195,7 +195,7 @@
             resources.ApplyResources(this.MainGridViev, "MainGridViev");
             this.MainGridViev.Name = "MainGridViev";
             this.MainGridViev.ReadOnly = true;
-            this.MainGridViev.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MainGridViev_CellClick);
+            this.MainGridViev.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MainGridViev_CellClick);
             // 
             // toolStrip1
             // 

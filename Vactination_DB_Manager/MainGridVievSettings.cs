@@ -13,7 +13,7 @@ namespace Vactination_DB_Manager
     public class MainGridVievSettings
     {
         private System.Windows.Forms.DataGridView MainGridViev;
-        private string chosen_lang = "en";
+        private string chosen_lang = "ua";
 
         public string[] en_lang_mask = { };
         public string[] ua_lang_mask = { };

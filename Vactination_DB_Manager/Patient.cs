@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Vactination_DB_Manager
 {
-    internal class Patient
+    public class Patient
     {
         public string Temp_imunization_id { get; set; } = "";
         public string Legal_entity_id { get; set; } = "";
