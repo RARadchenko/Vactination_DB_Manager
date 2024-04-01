@@ -74,6 +74,7 @@ namespace Vactination_DB_Manager
                 expirationDate.Value, doseQuantityUnit.Text, doseQuantityValue.Value.ToString(), Decimal.ToInt32(DoseSequence.Value), Series.Text, Decimal.ToInt32(seriesDoses.Value),
                 targetDiseases.Text, DateTime.Parse(insertedDate), dt);
             patientsContainer.editPatient(patient, patientEdited, addNewMode);
+            this.Close();
         }
     }
 }

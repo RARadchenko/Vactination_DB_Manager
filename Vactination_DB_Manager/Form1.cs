@@ -130,7 +130,9 @@ namespace Vactination_DB_Manager
         private void gridSettings_Click(object sender, EventArgs e)
         {
             GridSettingsForm gridSettingsForm = new GridSettingsForm();
+            gridSettingsForm.FormClosed += ForRefresh_FormClosed;
             gridSettingsForm.ShowDialog();
+            showPage();
         }
 
         private void Form1_Activated(object sender, EventArgs e)
@@ -149,8 +151,14 @@ namespace Vactination_DB_Manager
                 //DataGridViewRow row = MainGridViev.Rows[e.RowIndex];
                 int pageIndex = currentPage == 0 ? 1 : (currentPage - 1) * MainGridVievSettings.q_of_patients_on_page;
                 PatientEditor patientEditor = new PatientEditor(patientsContainer.PatientsList[(e.RowIndex + 1) + (pageIndex)], patientsContainer, false);
+                patientEditor.FormClosed += ForRefresh_FormClosed;
                 patientEditor.ShowDialog();
             }
+        }
+
+        private void ForRefresh_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            showPage();
         }
 
 
