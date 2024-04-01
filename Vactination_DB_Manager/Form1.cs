@@ -148,7 +148,7 @@ namespace Vactination_DB_Manager
             {
                 //DataGridViewRow row = MainGridViev.Rows[e.RowIndex];
                 int pageIndex = currentPage == 0 ? 1 : (currentPage - 1) * MainGridVievSettings.q_of_patients_on_page;
-                PatientEditor patientEditor = new PatientEditor(patientsContainer.PatientsList[(e.RowIndex + 1) + (pageIndex)]);
+                PatientEditor patientEditor = new PatientEditor(patientsContainer.PatientsList[(e.RowIndex + 1) + (pageIndex)], patientsContainer, false);
                 patientEditor.ShowDialog();
             }
         }

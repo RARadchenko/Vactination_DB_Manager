@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vactination_DB_Manager
 {
-    internal class PatientsContainer
+    public class PatientsContainer
     {
         public List<Patient> PatientsList { get; set; }
 
@@ -25,6 +25,37 @@ namespace Vactination_DB_Manager
         public void removePatient(Patient patient)
         {
             PatientsList.Remove(patient); 
+        }
+        public void editPatient(Patient patientOld, Patient patientNew, bool addNewMode)
+        {
+            Patient patientEdit = PatientsList.Find(p => p.Temp_imunization_id==patientOld.Temp_imunization_id);
+            if (patientEdit != null)
+            {
+                patientEdit.Temp_imunization_id = patientNew.Temp_imunization_id;
+                patientEdit.Legal_entity_id = patientNew.Legal_entity_id;
+                patientEdit.Division_identifier_value = patientNew.Division_identifier_value;
+                patientEdit.Status = patientNew.Status;
+                patientEdit.Not_given = patientNew.Not_given;
+                patientEdit.Vaccine_code = patientNew.Vaccine_code;
+                patientEdit.Imunization_date = patientNew.Imunization_date;
+                patientEdit.Patient_age_group = patientNew.Patient_age_group;
+                patientEdit.Patient_gender = patientNew.Patient_gender;
+                patientEdit.Manufacturer = patientNew.Manufacturer;
+                patientEdit.Lot_number = patientNew.Lot_number;
+                patientEdit.expiration_date = patientNew.expiration_date;
+                patientEdit.Dose_quantity_unit = patientNew.Dose_quantity_unit;
+                patientEdit.Dose_quantity_value = patientNew.Dose_quantity_value;
+                patientEdit.Vaccination_protocol_dose_sequence = patientNew.Vaccination_protocol_dose_sequence;
+                patientEdit.Vaccination_protocol_series = patientNew.Vaccination_protocol_series;
+                patientEdit.Vaccination_protocol_series_doses = patientNew.Vaccination_protocol_series_doses;
+                patientEdit.Vaccination_protocol_target_diseases = patientNew.Vaccination_protocol_target_diseases;
+                patientEdit.Inserted_at = patientNew.Inserted_at;
+                patientEdit.updated_at = patientNew.updated_at;
+            }
+            else if(addNewMode == true)
+            {
+                addPatient(patientNew);
+            }
         }
         public void clearPatients()
         {

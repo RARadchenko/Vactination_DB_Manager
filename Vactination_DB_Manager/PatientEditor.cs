@@ -12,21 +12,36 @@ namespace Vactination_DB_Manager
 {
     public partial class PatientEditor : Form
     {
+        private DateTime dt;
         private Patient patient;
+        private PatientsContainer patientsContainer;
+        private bool addNewMode = false;
+
+        private string insertedDate;
         public PatientEditor()
         {
             InitializeComponent();
         }
 
-        public PatientEditor(Patient patient)
+        public PatientEditor(Patient patient, PatientsContainer patientsContainer)
         {
             InitializeComponent();
             this.patient = patient;
+            this.patientsContainer = patientsContainer;
+        }
+
+        public PatientEditor(Patient patient, PatientsContainer patientsContainer, bool addNewMode)
+        {
+            InitializeComponent();
+            this.patient = patient;
+            this.patientsContainer = patientsContainer;
+            this.addNewMode = addNewMode;
         }
 
         private void PatientEditor_Load(object sender, EventArgs e)
         {
-            DateTime dt = DateTime.Now;
+            dt = DateTime.Now;
+            insertedDate = addNewMode == false ? patient.Inserted_at.ToShortDateString() : dt.ToShortDateString();
             IdTempImmunization.Text = patient.Temp_imunization_id;
             legalEntityId.Text = patient.Legal_entity_id;
             divisionIdefluerValue.Text = patient.Division_identifier_value;
@@ -36,8 +51,29 @@ namespace Vactination_DB_Manager
             Gender.Text = patient.Patient_gender;
             VactineCode.Text = patient.Vaccine_code;
             immunizationDate.Text = patient.Imunization_date.ToShortDateString();
-
+            manufacturer.Text = patient.Manufacturer;
+            LotNumber.Text = patient.Lot_number;
+            expirationDate.Text = patient.expiration_date.ToShortDateString() == "01.01.0001" ? patient.Imunization_date.ToShortDateString() : patient.expiration_date.ToShortDateString();
+            doseQuantityUnit.Text = patient.Dose_quantity_unit;
+            doseQuantityValue.Value = patient.Dose_quantity_value != "NULL" ? decimal.Parse(patient.Dose_quantity_value.Replace(".", ",")) : new decimal(0);
+            DoseSequence.Value = patient.Vaccination_protocol_dose_sequence;
+            Series.Text = patient.Vaccination_protocol_series;
+            seriesDoses.Value = patient.Vaccination_protocol_series_doses;
+            targetDiseases.Text = patient.Vaccination_protocol_target_diseases;
+            insertedAtLabel.Text = $"Запис внесено в: {insertedDate}";
             updateAtLabel.Text = $"Запис оновлено в: {dt.ToShortDateString()}";
+        }
+
+
+
+        private void SaveChanges_Click(object sender, EventArgs e)
+        {
+            Patient patientEdited = new Patient(IdTempImmunization.Text, legalEntityId.Text,
+                divisionIdefluerValue.Text, Status.SelectedText == "+" ? true : false, NotGiven.SelectedText == "+" ? true : false,
+                VactineCode.Text, DateTime.Parse(immunizationDate.Text), ageGroup.Text, Gender.Text, manufacturer.Text, LotNumber.Text,
+                expirationDate.Value, doseQuantityUnit.Text, doseQuantityValue.Value.ToString(), Decimal.ToInt32(DoseSequence.Value), Series.Text, Decimal.ToInt32(seriesDoses.Value),
+                targetDiseases.Text, DateTime.Parse(insertedDate), dt);
+            patientsContainer.editPatient(patient, patientEdited, addNewMode);
         }
     }
 }
