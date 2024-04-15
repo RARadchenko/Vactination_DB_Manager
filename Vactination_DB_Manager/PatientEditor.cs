@@ -70,7 +70,7 @@ namespace Vactination_DB_Manager
         private void SaveChanges_Click(object sender, EventArgs e)
         {
             Patient patientEdited = new Patient(IdTempImmunization.Text, legalEntityId.Text,
-                divisionIdefluerValue.Text, Status.SelectedText == "+" ? true : false, NotGiven.SelectedText == "+" ? true : false,
+                divisionIdefluerValue.Text, Status.Text == "+" ? true : false, NotGiven.Text == "+" ? true : false,
                 VactineCode.Text, DateTime.Parse(immunizationDate.Text), ageGroup.Text, Gender.Text, manufacturer.Text, LotNumber.Text,
                 expirationDate.Value, doseQuantityUnit.Text, doseQuantityValue.Value.ToString(), Decimal.ToInt32(DoseSequence.Value), Series.Text, Decimal.ToInt32(seriesDoses.Value),
                 targetDiseases.Text, DateTime.Parse(insertedDate), dt);
