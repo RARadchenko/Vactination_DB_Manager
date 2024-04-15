@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.WebRequestMethods;
@@ -68,6 +69,7 @@ namespace Vactination_DB_Manager
                 dBFile.readDBFileLikeArrayOfLines();
                 patientsContainer.clearPatients();
                 FillUpPatientContainer();
+                Thread.Sleep(100);
                 showPage();
                 maxPage = dBFile.LinesCount / MainGridVievSettings.q_of_patients_on_page;
                 maxPage += (patientsContainer.PatientsList.Count % MainGridVievSettings.q_of_patients_on_page == 0) ? 0 : 1;
@@ -94,7 +96,7 @@ namespace Vactination_DB_Manager
             maxPage += (patientsContainer.PatientsList.Count % MainGridVievSettings.q_of_patients_on_page == 0) ? 0 : 1;
             PagesInfo.Text = $"{currentPage} page of {maxPage}";
             int start = currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1);
-            int finish = currentPage != maxPage ? currentPage * MainGridVievSettings.q_of_patients_on_page + 1: patientsContainer.PatientsList.Count;
+            int finish = currentPage != maxPage ? currentPage * MainGridVievSettings.q_of_patients_on_page + 1: patientsContainer.PatientsList.Count+1;
                 for (int i = start; i < finish; i++)
                 {
                     mGV.addNewLine(patientsContainer.getOnePatient(i-1));
@@ -203,6 +205,23 @@ namespace Vactination_DB_Manager
             PatientEditor patientEditor = new PatientEditor(new Patient(), patientsContainer, true);
             patientEditor.FormClosed += ForRefresh_FormClosed;
             patientEditor.ShowDialog();
+        }
+
+        private void ExportToTXT_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "TXT files (*.txt)|*.txt";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                TxtExport ex = new TxtExport(0, patientsContainer.PatientsList.Count);
+                toolStripProgressBar1.Maximum = patientsContainer.PatientsList.Count;
+                for (int i = 0; i < patientsContainer.PatientsList.Count; i++)
+                {
+                    ex.ExportByLine(saveFileDialog.FileName, patientsContainer.getOnePatient(i));
+                    toolStripProgressBar1.Value = i+1;
+                }
+            }
         }
     }
 }

@@ -48,14 +48,15 @@
             this.українськаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainGridViev = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.pageNumberInput = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ExampleButton1 = new System.Windows.Forms.ToolStripButton();
             this.ExportToPDF = new System.Windows.Forms.ToolStripButton();
+            this.ExportToTXT = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.PrevPage = new System.Windows.Forms.ToolStripButton();
             this.NextPage = new System.Windows.Forms.ToolStripButton();
+            this.pageNumberInput = new System.Windows.Forms.ToolStripTextBox();
             this.goToPage = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.SortingMenu = new System.Windows.Forms.ToolStripSplitButton();
             this.tempImmunizationId = new System.Windows.Forms.ToolStripMenuItem();
             this.iDЮридичноїОсобиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,7 +79,6 @@
             this.вставленоВToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оновленоВToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddNew = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainGridViev)).BeginInit();
@@ -206,7 +206,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ExampleButton1,
             this.ExportToPDF,
-            this.toolStripButton1,
+            this.ExportToTXT,
             this.toolStripSeparator1,
             this.PrevPage,
             this.NextPage,
@@ -216,23 +216,6 @@
             this.SortingMenu,
             this.AddNew});
             this.toolStrip1.Name = "toolStrip1";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-            // 
-            // pageNumberInput
-            // 
-            this.pageNumberInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.pageNumberInput, "pageNumberInput");
-            this.pageNumberInput.Name = "pageNumberInput";
-            this.pageNumberInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pageNumberInput_KeyPress);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // ExampleButton1
             // 
@@ -246,6 +229,19 @@
             this.ExportToPDF.Image = global::Vactination_DB_Manager.Properties.Resources.PDF1;
             resources.ApplyResources(this.ExportToPDF, "ExportToPDF");
             this.ExportToPDF.Name = "ExportToPDF";
+            // 
+            // ExportToTXT
+            // 
+            this.ExportToTXT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ExportToTXT.Image = global::Vactination_DB_Manager.Properties.Resources.TXT;
+            resources.ApplyResources(this.ExportToTXT, "ExportToTXT");
+            this.ExportToTXT.Name = "ExportToTXT";
+            this.ExportToTXT.Click += new System.EventHandler(this.ExportToTXT_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // PrevPage
             // 
@@ -263,6 +259,13 @@
             this.NextPage.Name = "NextPage";
             this.NextPage.Click += new System.EventHandler(this.NextPage_Click);
             // 
+            // pageNumberInput
+            // 
+            this.pageNumberInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.pageNumberInput, "pageNumberInput");
+            this.pageNumberInput.Name = "pageNumberInput";
+            this.pageNumberInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pageNumberInput_KeyPress);
+            // 
             // goToPage
             // 
             this.goToPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -270,6 +273,11 @@
             resources.ApplyResources(this.goToPage, "goToPage");
             this.goToPage.Name = "goToPage";
             this.goToPage.Click += new System.EventHandler(this.goToPage_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // SortingMenu
             // 
@@ -428,13 +436,6 @@
             this.AddNew.Name = "AddNew";
             this.AddNew.Click += new System.EventHandler(this.AddNew_Click);
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Vactination_DB_Manager.Properties.Resources.TXT;
-            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
-            this.toolStripButton1.Name = "toolStripButton1";
-            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -511,7 +512,7 @@
         private System.Windows.Forms.ToolStripMenuItem кодВакциниToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem дозиСеріїВакцинаційногоПротоколуToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton AddNew;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton ExportToTXT;
     }
 }
 
