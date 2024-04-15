@@ -97,10 +97,13 @@ namespace Vactination_DB_Manager
             PagesInfo.Text = $"{currentPage} page of {maxPage}";
             int start = currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1);
             int finish = currentPage != maxPage ? currentPage * MainGridVievSettings.q_of_patients_on_page + 1: patientsContainer.PatientsList.Count+1;
+            toolStripProgressBar1.Minimum = start;
+            toolStripProgressBar1.Maximum = finish;
                 for (int i = start; i < finish; i++)
                 {
                     mGV.addNewLine(patientsContainer.getOnePatient(i-1));
-                    toolStripProgressBar1.Value = (int)((double)((i - start) / (double)(finish - start)) * 100.0);
+                    toolStripProgressBar1.Value = i + 1;
+                    //toolStripProgressBar1.Value = (int)((double)((i - start) / (double)(finish - start)) * 100.0);
                 }
             //showLines(currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1), currentPage * MainGridVievSettings.q_of_patients_on_page + 1);
         }
@@ -215,6 +218,7 @@ namespace Vactination_DB_Manager
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 TxtExport ex = new TxtExport(0, patientsContainer.PatientsList.Count);
+                toolStripProgressBar1.Minimum = 0;
                 toolStripProgressBar1.Maximum = patientsContainer.PatientsList.Count;
                 for (int i = 0; i < patientsContainer.PatientsList.Count; i++)
                 {
