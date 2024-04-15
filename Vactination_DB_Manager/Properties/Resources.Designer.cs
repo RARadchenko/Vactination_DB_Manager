@@ -63,6 +63,16 @@ namespace Vactination_DB_Manager.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_person {
+            get {
+                object obj = ResourceManager.GetObject("add_person", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blue_diskette {
             get {
                 object obj = ResourceManager.GetObject("blue_diskette", resourceCulture);

@@ -50,10 +50,11 @@ namespace Vactination_DB_Manager
             ageGroup.Text = patient.Patient_age_group;
             Gender.Text = patient.Patient_gender;
             VactineCode.Text = patient.Vaccine_code;
-            immunizationDate.Text = patient.Imunization_date.ToShortDateString();
+            immunizationDate.Text = patient.Imunization_date > immunizationDate.MinDate ? patient.Imunization_date.ToShortDateString() : immunizationDate.MinDate.ToString();
             manufacturer.Text = patient.Manufacturer;
             LotNumber.Text = patient.Lot_number;
-            expirationDate.Text = patient.expiration_date.ToShortDateString() == "01.01.0001" ? patient.Imunization_date.ToShortDateString() : patient.expiration_date.ToShortDateString();
+            expirationDate.Text = patient.expiration_date.ToShortDateString() == "01.01.0001" ? immunizationDate.Text : 
+                patient.expiration_date > expirationDate.MinDate ? expirationDate.MinDate.ToString() : patient.expiration_date.ToShortDateString();
             doseQuantityUnit.Text = patient.Dose_quantity_unit;
             doseQuantityValue.Value = patient.Dose_quantity_value != "NULL" ? decimal.Parse(patient.Dose_quantity_value.Replace(".", ",")) : new decimal(0);
             DoseSequence.Value = patient.Vaccination_protocol_dose_sequence;

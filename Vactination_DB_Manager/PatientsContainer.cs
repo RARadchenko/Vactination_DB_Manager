@@ -29,7 +29,7 @@ namespace Vactination_DB_Manager
         public void editPatient(Patient patientOld, Patient patientNew, bool addNewMode)
         {
             Patient patientEdit = PatientsList.Find(p => p.Temp_imunization_id==patientOld.Temp_imunization_id);
-            if (patientEdit != null)
+            if (patientEdit != null && addNewMode != true)
             {
                 patientEdit.Temp_imunization_id = patientNew.Temp_imunization_id;
                 patientEdit.Legal_entity_id = patientNew.Legal_entity_id;

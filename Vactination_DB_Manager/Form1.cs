@@ -90,12 +90,13 @@ namespace Vactination_DB_Manager
         {
             mGV.refresh();
             maxPage = patientsContainer.PatientsList.Count / MainGridVievSettings.q_of_patients_on_page;
+            maxPage += (patientsContainer.PatientsList.Count % MainGridVievSettings.q_of_patients_on_page == 0) ? 0 : 1;
             PagesInfo.Text = $"{currentPage} page of {maxPage}";
             int start = currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1);
             int finish = currentPage * MainGridVievSettings.q_of_patients_on_page + 1;
                 for (int i = start; i < finish; i++)
                 {
-                    mGV.addNewLine(patientsContainer.getOnePatient(i));
+                    mGV.addNewLine(patientsContainer.getOnePatient(i-1));
                     toolStripProgressBar1.Value = (int)((double)((i - start) / (double)(finish - start)) * 100.0);
                 }
             //showLines(currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1), currentPage * MainGridVievSettings.q_of_patients_on_page + 1);
@@ -157,7 +158,7 @@ namespace Vactination_DB_Manager
             {
                 //DataGridViewRow row = MainGridViev.Rows[e.RowIndex];
                 int pageIndex = currentPage == 0 ? 1 : (currentPage - 1) * MainGridVievSettings.q_of_patients_on_page;
-                PatientEditor patientEditor = new PatientEditor(patientsContainer.PatientsList[(e.RowIndex + 1) + (pageIndex)], patientsContainer, false);
+                PatientEditor patientEditor = new PatientEditor(patientsContainer.PatientsList[(e.RowIndex) + (pageIndex)], patientsContainer, false);
                 patientEditor.FormClosed += ForRefresh_FormClosed;
                 patientEditor.ShowDialog();
             }
@@ -190,6 +191,13 @@ namespace Vactination_DB_Manager
             patientsContainer.SortByArg(selected, reverseSort);
             showPage();
             //MessageBox.Show(selected.ToString() + string.Join("|", mGV.ua_lang_mask) + sender.ToString(), "Значення рядка");
+        }
+
+        private void AddNew_Click(object sender, EventArgs e)
+        {
+            PatientEditor patientEditor = new PatientEditor(new Patient(), patientsContainer, true);
+            patientEditor.FormClosed += ForRefresh_FormClosed;
+            patientEditor.ShowDialog();
         }
     }
 }

@@ -48,14 +48,14 @@
             this.українськаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainGridViev = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.pageNumberInput = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ExampleButton1 = new System.Windows.Forms.ToolStripButton();
             this.ExportToPDF = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.PrevPage = new System.Windows.Forms.ToolStripButton();
             this.NextPage = new System.Windows.Forms.ToolStripButton();
-            this.pageNumberInput = new System.Windows.Forms.ToolStripTextBox();
             this.goToPage = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.SortingMenu = new System.Windows.Forms.ToolStripSplitButton();
             this.tempImmunizationId = new System.Windows.Forms.ToolStripMenuItem();
             this.iDЮридичноїОсобиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,6 +77,7 @@
             this.цільовіЗахворюванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вставленоВToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оновленоВToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddNew = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainGridViev)).BeginInit();
@@ -210,8 +211,26 @@
             this.pageNumberInput,
             this.goToPage,
             this.toolStripSeparator2,
-            this.SortingMenu});
+            this.SortingMenu,
+            this.AddNew});
             this.toolStrip1.Name = "toolStrip1";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
+            // pageNumberInput
+            // 
+            this.pageNumberInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.pageNumberInput, "pageNumberInput");
+            this.pageNumberInput.Name = "pageNumberInput";
+            this.pageNumberInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pageNumberInput_KeyPress);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // ExampleButton1
             // 
@@ -225,11 +244,6 @@
             this.ExportToPDF.Image = global::Vactination_DB_Manager.Properties.Resources.PDF1;
             resources.ApplyResources(this.ExportToPDF, "ExportToPDF");
             this.ExportToPDF.Name = "ExportToPDF";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // PrevPage
             // 
@@ -247,13 +261,6 @@
             this.NextPage.Name = "NextPage";
             this.NextPage.Click += new System.EventHandler(this.NextPage_Click);
             // 
-            // pageNumberInput
-            // 
-            this.pageNumberInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.pageNumberInput, "pageNumberInput");
-            this.pageNumberInput.Name = "pageNumberInput";
-            this.pageNumberInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pageNumberInput_KeyPress);
-            // 
             // goToPage
             // 
             this.goToPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -261,11 +268,6 @@
             resources.ApplyResources(this.goToPage, "goToPage");
             this.goToPage.Name = "goToPage";
             this.goToPage.Click += new System.EventHandler(this.goToPage_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // SortingMenu
             // 
@@ -416,6 +418,14 @@
             resources.ApplyResources(this.оновленоВToolStripMenuItem, "оновленоВToolStripMenuItem");
             this.оновленоВToolStripMenuItem.Click += new System.EventHandler(this.sortSelect_Click);
             // 
+            // AddNew
+            // 
+            this.AddNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.AddNew.Image = global::Vactination_DB_Manager.Properties.Resources.add_person;
+            resources.ApplyResources(this.AddNew, "AddNew");
+            this.AddNew.Name = "AddNew";
+            this.AddNew.Click += new System.EventHandler(this.AddNew_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -491,6 +501,7 @@
         private System.Windows.Forms.ToolStripMenuItem оновленоВToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem кодВакциниToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem дозиСеріїВакцинаційногоПротоколуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton AddNew;
     }
 }
 

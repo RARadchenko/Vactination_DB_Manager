@@ -21,8 +21,8 @@ namespace Vactination_DB_Manager
         public string Manufacturer { get; set; } = "";
         public string Lot_number { get; set; } = "";
         public DateTime expiration_date { get; set; }
-        public string Dose_quantity_unit { get; set; } = "";
-        public string Dose_quantity_value { get; set; } = "";
+        public string Dose_quantity_unit { get; set; } = "0.0";
+        public string Dose_quantity_value { get; set; } = "0.0";
         public int Vaccination_protocol_dose_sequence { get; set; } = 0;
         public string Vaccination_protocol_series { get; set; } = "";
         public int Vaccination_protocol_series_doses { get; set; } = 0;
@@ -30,6 +30,8 @@ namespace Vactination_DB_Manager
         public DateTime Inserted_at { get; set; }
         public DateTime updated_at { get; set; }
 
+        public Patient()
+        { }
         public Patient(string temp_imunization_id, string legal_entity_id, string division_identifier_value, bool status, bool not_given, string vaccine_code, DateTime imunization_date, string patient_age_group, string patient_gender, string manufacturer, string lot_number, DateTime expiration_date, string dose_quantity_unit, string dose_quantity_value, int vaccination_protocol_dose_sequence, string vaccination_protocol_series, int vaccination_protocol_series_doses, string vaccination_protocol_target_diseases, DateTime inserted_at, DateTime updated_at)
         {
             Temp_imunization_id = temp_imunization_id;
