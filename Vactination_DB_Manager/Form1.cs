@@ -94,7 +94,7 @@ namespace Vactination_DB_Manager
             maxPage += (patientsContainer.PatientsList.Count % MainGridVievSettings.q_of_patients_on_page == 0) ? 0 : 1;
             PagesInfo.Text = $"{currentPage} page of {maxPage}";
             int start = currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1);
-            int finish = currentPage * MainGridVievSettings.q_of_patients_on_page + 1;
+            int finish = currentPage != maxPage ? currentPage * MainGridVievSettings.q_of_patients_on_page + 1: patientsContainer.PatientsList.Count;
                 for (int i = start; i < finish; i++)
                 {
                     mGV.addNewLine(patientsContainer.getOnePatient(i-1));

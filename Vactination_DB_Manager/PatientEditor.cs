@@ -36,6 +36,7 @@ namespace Vactination_DB_Manager
             this.patient = patient;
             this.patientsContainer = patientsContainer;
             this.addNewMode = addNewMode;
+            if (addNewMode) Delete.Visible = false;
         }
 
         private void PatientEditor_Load(object sender, EventArgs e)
