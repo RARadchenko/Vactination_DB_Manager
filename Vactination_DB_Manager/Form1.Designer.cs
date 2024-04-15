@@ -78,6 +78,7 @@
             this.вставленоВToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оновленоВToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddNew = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainGridViev)).BeginInit();
@@ -205,6 +206,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ExampleButton1,
             this.ExportToPDF,
+            this.toolStripButton1,
             this.toolStripSeparator1,
             this.PrevPage,
             this.NextPage,
@@ -426,6 +428,13 @@
             this.AddNew.Name = "AddNew";
             this.AddNew.Click += new System.EventHandler(this.AddNew_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::Vactination_DB_Manager.Properties.Resources.TXT;
+            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
+            this.toolStripButton1.Name = "toolStripButton1";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -502,6 +511,7 @@
         private System.Windows.Forms.ToolStripMenuItem кодВакциниToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem дозиСеріїВакцинаційногоПротоколуToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton AddNew;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

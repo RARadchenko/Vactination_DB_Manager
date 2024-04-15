@@ -70,6 +70,7 @@ namespace Vactination_DB_Manager
                 FillUpPatientContainer();
                 showPage();
                 maxPage = dBFile.LinesCount / MainGridVievSettings.q_of_patients_on_page;
+                maxPage += (patientsContainer.PatientsList.Count % MainGridVievSettings.q_of_patients_on_page == 0) ? 0 : 1;
                 PagesInfo.Text = $"{currentPage} page of {maxPage}";
             }
         }
@@ -123,6 +124,10 @@ namespace Vactination_DB_Manager
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true;
+            }
+            if (e.KeyChar == (char)Keys.Enter) 
+            {
+                goToPage_Click(sender, e);
             }
         }
 

@@ -317,6 +317,18 @@
   <data name="ExportToPDF.Text" xml:space="preserve">
     <value>Експорт в PDF</value>
   </data>
+  <data name="toolStripButton1.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="toolStripButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="toolStripButton1.Text" xml:space="preserve">
+    <value>Експорт в TXT</value>
+  </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 39</value>
   </data>
@@ -351,7 +363,7 @@
     <value>5</value>
   </data>
   <data name="pageNumberInput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 39</value>
+    <value>60, 39</value>
   </data>
   <data name="pageNumberInput.Text" xml:space="preserve">
     <value>1</value>
@@ -384,7 +396,7 @@
     <value>48, 36</value>
   </data>
   <data name="SortingMenu.Text" xml:space="preserve">
-    <value>toolStripSplitButton1</value>
+    <value>Сортування</value>
   </data>
   <data name="AddNew.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
@@ -396,7 +408,7 @@
     <value>36, 36</value>
   </data>
   <data name="AddNew.Text" xml:space="preserve">
-    <value>toolStripButton1</value>
+    <value>Додати новий запис</value>
   </data>
   <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 29</value>
@@ -612,9 +624,6 @@
         Af//AAD//wAA/74AAH2AAAABgAAAAb4AAH3/AAD//wAA//+AAf//gAH//wAA//4wDH/8fD4/+P5/H/3+
         f7///n////5////+f////D///////w==
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1918, 1000</value>
@@ -884,6 +893,12 @@
     <value>AddNew</value>
   </data>
   <data name="&gt;&gt;AddNew.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
+    <value>toolStripButton1</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

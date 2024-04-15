@@ -144,5 +144,8 @@
   <ItemGroup>
     <None Include="Resources\add_person.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TXT.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
