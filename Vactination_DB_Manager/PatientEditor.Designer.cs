@@ -69,6 +69,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.DoseSequence = new System.Windows.Forms.NumericUpDown();
+            this.Delete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doseQuantityValue)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -99,6 +100,7 @@
             // 
             // SaveChanges
             // 
+            this.SaveChanges.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SaveChanges.Location = new System.Drawing.Point(698, 287);
             this.SaveChanges.Name = "SaveChanges";
             this.SaveChanges.Size = new System.Drawing.Size(75, 23);
@@ -562,11 +564,23 @@
             0,
             0});
             // 
+            // Delete
+            // 
+            this.Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Delete.Location = new System.Drawing.Point(22, 287);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(110, 23);
+            this.Delete.TabIndex = 11;
+            this.Delete.Text = "Видалити запис";
+            this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            // 
             // PatientEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 336);
+            this.Controls.Add(this.Delete);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.SaveChanges);
             this.Name = "PatientEditor";
@@ -626,5 +640,6 @@
         private System.Windows.Forms.TextBox Series;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.NumericUpDown seriesDoses;
+        private System.Windows.Forms.Button Delete;
     }
 }

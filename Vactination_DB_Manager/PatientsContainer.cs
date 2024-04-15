@@ -24,7 +24,11 @@ namespace Vactination_DB_Manager
         }
         public void removePatient(Patient patient)
         {
-            PatientsList.Remove(patient); 
+            Patient patientDeleting = PatientsList.Find(p => p.Temp_imunization_id == patient.Temp_imunization_id);
+            if (patientDeleting != null)
+            {
+                PatientsList.Remove(patientDeleting);
+            }
         }
         public void editPatient(Patient patientOld, Patient patientNew, bool addNewMode)
         {

@@ -77,5 +77,16 @@ namespace Vactination_DB_Manager
             patientsContainer.editPatient(patient, patientEdited, addNewMode);
             this.Close();
         }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            Patient patientEdited = new Patient(IdTempImmunization.Text, legalEntityId.Text,
+                divisionIdefluerValue.Text, Status.SelectedText == "+" ? true : false, NotGiven.SelectedText == "+" ? true : false,
+                VactineCode.Text, DateTime.Parse(immunizationDate.Text), ageGroup.Text, Gender.Text, manufacturer.Text, LotNumber.Text,
+                expirationDate.Value, doseQuantityUnit.Text, doseQuantityValue.Value.ToString(), Decimal.ToInt32(DoseSequence.Value), Series.Text, Decimal.ToInt32(seriesDoses.Value),
+                targetDiseases.Text, DateTime.Parse(insertedDate), dt);
+            patientsContainer.removePatient(patientEdited);
+            this.Close();
+        }
     }
 }
