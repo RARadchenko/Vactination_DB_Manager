@@ -101,7 +101,7 @@ namespace Vactination_DB_Manager
             toolStripProgressBar1.Maximum = finish;
                 for (int i = start; i < finish; i++)
                 {
-                    mGV.addNewLine(patientsContainer.getOnePatient(i-1));
+                    mGV.addNewLine(patientsContainer.getOnePatient(i-1, true));
                     toolStripProgressBar1.Value = i + 1;
                     //toolStripProgressBar1.Value = (int)((double)((i - start) / (double)(finish - start)) * 100.0);
                 }
@@ -217,13 +217,32 @@ namespace Vactination_DB_Manager
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                TxtExport ex = new TxtExport(0, patientsContainer.PatientsList.Count);
+                TextExport ex = new TextExport(0, patientsContainer.PatientsList.Count, true, 40);
                 toolStripProgressBar1.Minimum = 0;
                 toolStripProgressBar1.Maximum = patientsContainer.PatientsList.Count;
                 for (int i = 0; i < patientsContainer.PatientsList.Count; i++)
                 {
-                    ex.ExportByLine(saveFileDialog.FileName, patientsContainer.getOnePatient(i));
+                    ex.ExportByLine(saveFileDialog.FileName, patientsContainer.getOnePatient(i, false));
                     toolStripProgressBar1.Value = i+1;
+                }
+            }
+        }
+
+        private void saveAs_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "CSV files (*.csv)|*.csv";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                TextExport ex = new TextExport(",", ",", 0, patientsContainer.PatientsList.Count, true, 0);
+                ex.ExportByLine(saveFileDialog.FileName, mGV.en_lang_mask);
+                toolStripProgressBar1.Minimum = 0;
+                toolStripProgressBar1.Maximum = patientsContainer.PatientsList.Count;
+                for (int i = 0; i < patientsContainer.PatientsList.Count; i++)
+                {
+                    ex.ExportByLine(saveFileDialog.FileName, patientsContainer.getOnePatient(i, false));
+                    toolStripProgressBar1.Value = i + 1;
                 }
             }
         }

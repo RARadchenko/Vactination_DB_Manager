@@ -75,7 +75,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GridViewLangMasks.resx</DependentUpon>
     </Compile>
-    <Compile Include="TxtExport.cs" />
+    <Compile Include="TextExport.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -141,9 +141,9 @@ namespace Vactination_DB_Manager
                 PatientsList.Reverse();
             }
         }
-        public string[] getOnePatient(int index)
+        public string[] getOnePatient(int index, bool change)
         {
-            if (index < PatientsList.Count) return PatientsList[index].getMass();
+            if (index < PatientsList.Count) return PatientsList[index].getMass(change);
             else return new string[] { "Error file haven`t than line" };
         }
     }

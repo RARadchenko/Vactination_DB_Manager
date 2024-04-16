@@ -112,10 +112,19 @@ namespace Vactination_DB_Manager
                 $"{Vaccination_protocol_series}{Vaccination_protocol_series_doses}{Vaccination_protocol_target_diseases}" +
                 $"{Inserted_at}{updated_at}";
         }
-        public string[] getMass()
+        public string[] getMass(bool change)
         {
-            return new string[] { Temp_imunization_id, Legal_entity_id, Division_identifier_value,
+            if (change)
+            {
+                return new string[] { Temp_imunization_id, Legal_entity_id, Division_identifier_value,
                 Status? "+" : "-", Not_given? "+" : "-", Vaccine_code, Imunization_date.ToShortDateString(),
+                Patient_age_group, Patient_gender, Manufacturer,Lot_number,
+                expiration_date.ToShortDateString(),Dose_quantity_unit,Dose_quantity_value,Vaccination_protocol_dose_sequence.ToString(),
+                Vaccination_protocol_series, Vaccination_protocol_series_doses.ToString(), Vaccination_protocol_target_diseases,
+            Inserted_at.ToShortDateString(), updated_at.ToShortDateString()};
+            }
+            return new string[] { Temp_imunization_id, Legal_entity_id, Division_identifier_value,
+                Status? "\"Запис коректний\"" : "\"Запис внесено помилково\"", Not_given? "True" : "False", Vaccine_code, Imunization_date.ToShortDateString(),
                 Patient_age_group, Patient_gender, Manufacturer,Lot_number,
                 expiration_date.ToShortDateString(),Dose_quantity_unit,Dose_quantity_value,Vaccination_protocol_dose_sequence.ToString(),
                 Vaccination_protocol_series, Vaccination_protocol_series_doses.ToString(), Vaccination_protocol_target_diseases,

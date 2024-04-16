@@ -70,6 +70,8 @@ namespace Vactination_DB_Manager
 
         private void SaveChanges_Click(object sender, EventArgs e)
         {
+            string mama = Status.Text;
+            string mama2 = Status.SelectedItem.ToString();
             Patient patientEdited = new Patient(IdTempImmunization.Text, legalEntityId.Text,
                 divisionIdefluerValue.Text, Status.Text == "+" ? true : false, NotGiven.Text == "+" ? true : false,
                 VactineCode.Text, DateTime.Parse(immunizationDate.Text), ageGroup.Text, Gender.Text, manufacturer.Text, LotNumber.Text,
