@@ -104,6 +104,13 @@ namespace Vactination_DB_Manager
                 return dateout;
         }
 
+        private string DateToStr(DateTime date)
+        {
+            string month = date.Month > 10 ? date.Month.ToString() : '0' + date.Month.ToString();
+            string day = date.Month > 10 ? date.Day.ToString() : '0' + date.Day.ToString();
+            return $"{date.Year.ToString()}-{month}-{day}";
+        }
+
         public override string ToString()
         {
             return $"{Temp_imunization_id}{Legal_entity_id}{Division_identifier_value}{Status}{Not_given}" +
@@ -123,12 +130,12 @@ namespace Vactination_DB_Manager
                 Vaccination_protocol_series, Vaccination_protocol_series_doses.ToString(), Vaccination_protocol_target_diseases,
             Inserted_at.ToShortDateString(), updated_at.ToShortDateString()};
             }
-            return new string[] { Temp_imunization_id, Legal_entity_id, Division_identifier_value,
-                Status? "\"Запис коректний\"" : "\"Запис внесено помилково\"", Not_given? "True" : "False", Vaccine_code, Imunization_date.ToShortDateString(),
-                Patient_age_group, Patient_gender, Manufacturer,Lot_number,
-                expiration_date.ToShortDateString(),Dose_quantity_unit,Dose_quantity_value,Vaccination_protocol_dose_sequence.ToString(),
-                Vaccination_protocol_series, Vaccination_protocol_series_doses.ToString(), Vaccination_protocol_target_diseases,
-            Inserted_at.ToShortDateString(), updated_at.ToShortDateString()};
+            return new string[] { '\"' + Temp_imunization_id+ '\"', '\"' + Legal_entity_id+ '\"', '\"' + Division_identifier_value+ '\"',
+                Status? "\"Запис коректний\"" : "\"Запис внесено помилково\"", Not_given? "True" : "False", '\"' + Vaccine_code+ '\"', '\"' + DateToStr(Imunization_date) + '\"',
+                Patient_age_group, '\"'+Patient_gender + '\"', '\"' + Manufacturer+ '\"','\"' +Lot_number + '\"',
+                '\"' + DateToStr(expiration_date) + '\"', Dose_quantity_unit,Dose_quantity_value.Replace(",", "."),'\"'+Vaccination_protocol_dose_sequence.ToString()+'\"',
+                '\"' + Vaccination_protocol_series + '\"','\"' + Vaccination_protocol_series_doses.ToString() + '\"', '\"' + Vaccination_protocol_target_diseases + '\"',
+            '\"'+ DateToStr(Inserted_at)+ '\"', '\"' + DateToStr(updated_at)+'\"'};
         }
     }
 }
