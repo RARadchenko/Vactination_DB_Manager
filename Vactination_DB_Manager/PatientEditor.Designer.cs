@@ -85,7 +85,7 @@
             this.immunizationDate.Location = new System.Drawing.Point(119, 195);
             this.immunizationDate.Name = "immunizationDate";
             this.immunizationDate.Size = new System.Drawing.Size(86, 22);
-            this.immunizationDate.TabIndex = 0;
+            this.immunizationDate.TabIndex = 9;
             // 
             // updateAtLabel
             // 
@@ -104,7 +104,7 @@
             this.SaveChanges.Location = new System.Drawing.Point(698, 287);
             this.SaveChanges.Name = "SaveChanges";
             this.SaveChanges.Size = new System.Drawing.Size(75, 23);
-            this.SaveChanges.TabIndex = 2;
+            this.SaveChanges.TabIndex = 19;
             this.SaveChanges.Text = "Зберегти";
             this.SaveChanges.UseVisualStyleBackColor = true;
             this.SaveChanges.Click += new System.EventHandler(this.SaveChanges_Click);
@@ -119,7 +119,7 @@
             this.NotGiven.Location = new System.Drawing.Point(284, 102);
             this.NotGiven.Name = "NotGiven";
             this.NotGiven.Size = new System.Drawing.Size(62, 24);
-            this.NotGiven.TabIndex = 3;
+            this.NotGiven.TabIndex = 5;
             this.NotGiven.Text = "-";
             // 
             // Status
@@ -147,7 +147,7 @@
             this.Gender.Location = new System.Drawing.Point(250, 136);
             this.Gender.Name = "Gender";
             this.Gender.Size = new System.Drawing.Size(96, 24);
-            this.Gender.TabIndex = 5;
+            this.Gender.TabIndex = 7;
             this.Gender.Text = "Null";
             // 
             // GenderText
@@ -247,7 +247,7 @@
             0});
             this.doseQuantityValue.Name = "doseQuantityValue";
             this.doseQuantityValue.Size = new System.Drawing.Size(56, 22);
-            this.doseQuantityValue.TabIndex = 28;
+            this.doseQuantityValue.TabIndex = 13;
             // 
             // label10
             // 
@@ -291,7 +291,7 @@
             this.doseQuantityUnit.Location = new System.Drawing.Point(481, 74);
             this.doseQuantityUnit.Name = "doseQuantityUnit";
             this.doseQuantityUnit.Size = new System.Drawing.Size(90, 24);
-            this.doseQuantityUnit.TabIndex = 24;
+            this.doseQuantityUnit.TabIndex = 12;
             this.doseQuantityUnit.Text = "\"ML\"";
             // 
             // expirationDateText
@@ -312,7 +312,7 @@
             this.expirationDate.Location = new System.Drawing.Point(481, 102);
             this.expirationDate.Name = "expirationDate";
             this.expirationDate.Size = new System.Drawing.Size(90, 22);
-            this.expirationDate.TabIndex = 22;
+            this.expirationDate.TabIndex = 14;
             // 
             // LotNumber
             // 
@@ -320,7 +320,7 @@
             this.LotNumber.Location = new System.Drawing.Point(481, 43);
             this.LotNumber.Name = "LotNumber";
             this.LotNumber.Size = new System.Drawing.Size(248, 22);
-            this.LotNumber.TabIndex = 21;
+            this.LotNumber.TabIndex = 11;
             // 
             // LotNumberText
             // 
@@ -338,7 +338,7 @@
             this.manufacturer.Location = new System.Drawing.Point(481, 15);
             this.manufacturer.Name = "manufacturer";
             this.manufacturer.Size = new System.Drawing.Size(248, 22);
-            this.manufacturer.TabIndex = 19;
+            this.manufacturer.TabIndex = 10;
             // 
             // manufacturerText
             // 
@@ -380,7 +380,7 @@
             this.ageGroup.Location = new System.Drawing.Point(98, 135);
             this.ageGroup.Name = "ageGroup";
             this.ageGroup.Size = new System.Drawing.Size(92, 24);
-            this.ageGroup.TabIndex = 11;
+            this.ageGroup.TabIndex = 6;
             this.ageGroup.Text = "Null";
             // 
             // label7
@@ -399,7 +399,7 @@
             this.VactineCode.Location = new System.Drawing.Point(98, 165);
             this.VactineCode.Name = "VactineCode";
             this.VactineCode.Size = new System.Drawing.Size(248, 22);
-            this.VactineCode.TabIndex = 17;
+            this.VactineCode.TabIndex = 8;
             // 
             // label6
             // 
@@ -417,7 +417,7 @@
             this.divisionIdefluerValue.Location = new System.Drawing.Point(98, 74);
             this.divisionIdefluerValue.Name = "divisionIdefluerValue";
             this.divisionIdefluerValue.Size = new System.Drawing.Size(248, 22);
-            this.divisionIdefluerValue.TabIndex = 15;
+            this.divisionIdefluerValue.TabIndex = 3;
             // 
             // legalEntityId
             // 
@@ -425,7 +425,7 @@
             this.legalEntityId.Location = new System.Drawing.Point(98, 46);
             this.legalEntityId.Name = "legalEntityId";
             this.legalEntityId.Size = new System.Drawing.Size(248, 22);
-            this.legalEntityId.TabIndex = 14;
+            this.legalEntityId.TabIndex = 2;
             // 
             // label5
             // 
@@ -463,7 +463,7 @@
             this.IdTempImmunization.Location = new System.Drawing.Point(98, 18);
             this.IdTempImmunization.Name = "IdTempImmunization";
             this.IdTempImmunization.Size = new System.Drawing.Size(248, 22);
-            this.IdTempImmunization.TabIndex = 10;
+            this.IdTempImmunization.TabIndex = 1;
             // 
             // groupBox2
             // 
@@ -498,7 +498,7 @@
             this.targetDiseases.Location = new System.Drawing.Point(116, 70);
             this.targetDiseases.Name = "targetDiseases";
             this.targetDiseases.Size = new System.Drawing.Size(248, 22);
-            this.targetDiseases.TabIndex = 22;
+            this.targetDiseases.TabIndex = 18;
             // 
             // label14
             // 
@@ -516,7 +516,7 @@
             this.seriesDoses.Location = new System.Drawing.Point(308, 14);
             this.seriesDoses.Name = "seriesDoses";
             this.seriesDoses.Size = new System.Drawing.Size(56, 22);
-            this.seriesDoses.TabIndex = 33;
+            this.seriesDoses.TabIndex = 16;
             this.seriesDoses.Value = new decimal(new int[] {
             1,
             0,
@@ -529,7 +529,7 @@
             this.Series.Location = new System.Drawing.Point(116, 40);
             this.Series.Name = "Series";
             this.Series.Size = new System.Drawing.Size(248, 22);
-            this.Series.TabIndex = 23;
+            this.Series.TabIndex = 17;
             // 
             // label13
             // 
@@ -557,7 +557,7 @@
             this.DoseSequence.Location = new System.Drawing.Point(116, 13);
             this.DoseSequence.Name = "DoseSequence";
             this.DoseSequence.Size = new System.Drawing.Size(56, 22);
-            this.DoseSequence.TabIndex = 29;
+            this.DoseSequence.TabIndex = 15;
             this.DoseSequence.Value = new decimal(new int[] {
             1,
             0,
@@ -570,7 +570,7 @@
             this.Delete.Location = new System.Drawing.Point(22, 287);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(110, 23);
-            this.Delete.TabIndex = 11;
+            this.Delete.TabIndex = 20;
             this.Delete.Text = "Видалити запис";
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
