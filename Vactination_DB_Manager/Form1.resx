@@ -121,21 +121,6 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="CurrentDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 17</value>
-  </data>
-  <data name="CurrentDate.Text" xml:space="preserve">
-    <value>01.01.2024 0:0:1</value>
-  </data>
-  <data name="toolStripProgressBar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 16</value>
-  </data>
-  <data name="PagesInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 17</value>
-  </data>
-  <data name="PagesInfo.Text" xml:space="preserve">
-    <value>1 page of 1</value>
-  </data>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 979</value>
   </data>
@@ -161,6 +146,30 @@
   <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="CurrentDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 17</value>
+  </data>
+  <data name="CurrentDate.Text" xml:space="preserve">
+    <value>01.01.2024 0:0:1</value>
+  </data>
+  <data name="toolStripProgressBar1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 16</value>
+  </data>
+  <data name="PagesInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 17</value>
+  </data>
+  <data name="PagesInfo.Text" xml:space="preserve">
+    <value>1 page of 1</value>
+  </data>
+  <data name="CurrentFileLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1632, 17</value>
+  </data>
+  <data name="CurrentFileLabel.Text" xml:space="preserve">
+    <value>NewFile</value>
+  </data>
+  <data name="CurrentFileLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
   <metadata name="StatusTimeTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
   </metadata>
@@ -169,66 +178,6 @@
   </metadata>
   <data name="menuStrip1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="newToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 26</value>
-  </data>
-  <data name="newToolStripMenuItem.Text" xml:space="preserve">
-    <value>Створити новий</value>
-  </data>
-  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 26</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>Відкрити існуючий</value>
-  </data>
-  <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 26</value>
-  </data>
-  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
-    <value>Зберегти</value>
-  </data>
-  <data name="saveAsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 26</value>
-  </data>
-  <data name="saveAsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Зберегти як</value>
-  </data>
-  <data name="FileStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 25</value>
-  </data>
-  <data name="FileStripMenuItem1.Text" xml:space="preserve">
-    <value>Файл</value>
-  </data>
-  <data name="gridSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 26</value>
-  </data>
-  <data name="gridSettings.Text" xml:space="preserve">
-    <value>Таблиця</value>
-  </data>
-  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 26</value>
-  </data>
-  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="українськаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 26</value>
-  </data>
-  <data name="українськаToolStripMenuItem.Text" xml:space="preserve">
-    <value>Українська</value>
-  </data>
-  <data name="LangToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 26</value>
-  </data>
-  <data name="LangToolStripMenuItem.Text" xml:space="preserve">
-    <value>Мова</value>
-  </data>
-  <data name="виглядToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 25</value>
-  </data>
-  <data name="виглядToolStripMenuItem.Text" xml:space="preserve">
-    <value>Вигляд</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -253,6 +202,66 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="FileStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 25</value>
+  </data>
+  <data name="FileStripMenuItem1.Text" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="newToolStripMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 26</value>
+  </data>
+  <data name="newToolStripMenu.Text" xml:space="preserve">
+    <value>Створити новий</value>
+  </data>
+  <data name="openToolStripMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 26</value>
+  </data>
+  <data name="openToolStripMenu.Text" xml:space="preserve">
+    <value>Відкрити існуючий</value>
+  </data>
+  <data name="saveToolStripMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 26</value>
+  </data>
+  <data name="saveToolStripMenu.Text" xml:space="preserve">
+    <value>Зберегти</value>
+  </data>
+  <data name="saveAsToolStripMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 26</value>
+  </data>
+  <data name="saveAsToolStripMenu.Text" xml:space="preserve">
+    <value>Зберегти як</value>
+  </data>
+  <data name="виглядToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 25</value>
+  </data>
+  <data name="виглядToolStripMenuItem.Text" xml:space="preserve">
+    <value>Вигляд</value>
+  </data>
+  <data name="gridSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 26</value>
+  </data>
+  <data name="gridSettings.Text" xml:space="preserve">
+    <value>Таблиця</value>
+  </data>
+  <data name="LangToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 26</value>
+  </data>
+  <data name="LangToolStripMenuItem.Text" xml:space="preserve">
+    <value>Мова</value>
+  </data>
+  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 26</value>
+  </data>
+  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="українськаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 26</value>
+  </data>
+  <data name="українськаToolStripMenuItem.Text" xml:space="preserve">
+    <value>Українська</value>
   </data>
   <data name="MainGridViev.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 62</value>
@@ -386,6 +395,54 @@
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 39</value>
   </data>
+  <data name="SortingMenu.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="SortingMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="SortingMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 36</value>
+  </data>
+  <data name="SortingMenu.Text" xml:space="preserve">
+    <value>Сортування</value>
+  </data>
+  <data name="AddNew.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="AddNew.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="AddNew.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="AddNew.Text" xml:space="preserve">
+    <value>Додати новий запис</value>
+  </data>
+  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 29</value>
+  </data>
+  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1902, 39</value>
+  </data>
+  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="toolStrip1.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="tempImmunizationId.Size" type="System.Drawing.Size, System.Drawing">
     <value>409, 26</value>
   </data>
@@ -506,54 +563,6 @@
   <data name="оновленоВToolStripMenuItem.Text" xml:space="preserve">
     <value>Оновлено в</value>
   </data>
-  <data name="SortingMenu.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="SortingMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="SortingMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 36</value>
-  </data>
-  <data name="SortingMenu.Text" xml:space="preserve">
-    <value>Сортування</value>
-  </data>
-  <data name="AddNew.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="AddNew.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="AddNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
-  </data>
-  <data name="AddNew.Text" xml:space="preserve">
-    <value>Додати новий запис</value>
-  </data>
-  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 29</value>
-  </data>
-  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1902, 39</value>
-  </data>
-  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="toolStrip1.Text" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -649,6 +658,12 @@
   <data name="&gt;&gt;PagesInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;CurrentFileLabel.Name" xml:space="preserve">
+    <value>CurrentFileLabel</value>
+  </data>
+  <data name="&gt;&gt;CurrentFileLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;StatusTimeTimer.Name" xml:space="preserve">
     <value>StatusTimeTimer</value>
   </data>
@@ -661,28 +676,28 @@
   <data name="&gt;&gt;FileStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;newToolStripMenuItem.Name" xml:space="preserve">
-    <value>newToolStripMenuItem</value>
+  <data name="&gt;&gt;newToolStripMenu.Name" xml:space="preserve">
+    <value>newToolStripMenu</value>
   </data>
-  <data name="&gt;&gt;newToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;newToolStripMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;openToolStripMenuItem.Name" xml:space="preserve">
-    <value>openToolStripMenuItem</value>
+  <data name="&gt;&gt;openToolStripMenu.Name" xml:space="preserve">
+    <value>openToolStripMenu</value>
   </data>
-  <data name="&gt;&gt;openToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;openToolStripMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;saveToolStripMenuItem.Name" xml:space="preserve">
-    <value>saveToolStripMenuItem</value>
+  <data name="&gt;&gt;saveToolStripMenu.Name" xml:space="preserve">
+    <value>saveToolStripMenu</value>
   </data>
-  <data name="&gt;&gt;saveToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;saveToolStripMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;saveAsToolStripMenuItem.Name" xml:space="preserve">
-    <value>saveAsToolStripMenuItem</value>
+  <data name="&gt;&gt;saveAsToolStripMenu.Name" xml:space="preserve">
+    <value>saveAsToolStripMenu</value>
   </data>
-  <data name="&gt;&gt;saveAsToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;saveAsToolStripMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;виглядToolStripMenuItem.Name" xml:space="preserve">

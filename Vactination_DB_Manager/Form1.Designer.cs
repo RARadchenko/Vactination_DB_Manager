@@ -34,13 +34,14 @@
             this.CurrentDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.PagesInfo = new System.Windows.Forms.ToolStripStatusLabel();
+            this.CurrentFileLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusTimeTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.FileStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.виглядToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.LangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,7 +91,8 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CurrentDate,
             this.toolStripProgressBar1,
-            this.PagesInfo});
+            this.PagesInfo,
+            this.CurrentFileLabel});
             resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
             // 
@@ -110,6 +112,12 @@
             this.PagesInfo.Name = "PagesInfo";
             resources.ApplyResources(this.PagesInfo, "PagesInfo");
             // 
+            // CurrentFileLabel
+            // 
+            this.CurrentFileLabel.Name = "CurrentFileLabel";
+            resources.ApplyResources(this.CurrentFileLabel, "CurrentFileLabel");
+            this.CurrentFileLabel.Spring = true;
+            // 
             // StatusTimeTimer
             // 
             this.StatusTimeTimer.Tick += new System.EventHandler(this.StatusTimeTimer_Tick);
@@ -126,34 +134,36 @@
             // FileStripMenuItem1
             // 
             this.FileStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem});
+            this.newToolStripMenu,
+            this.openToolStripMenu,
+            this.saveToolStripMenu,
+            this.saveAsToolStripMenu});
             this.FileStripMenuItem1.Name = "FileStripMenuItem1";
             resources.ApplyResources(this.FileStripMenuItem1, "FileStripMenuItem1");
             // 
-            // newToolStripMenuItem
+            // newToolStripMenu
             // 
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            resources.ApplyResources(this.newToolStripMenuItem, "newToolStripMenuItem");
+            this.newToolStripMenu.Name = "newToolStripMenu";
+            resources.ApplyResources(this.newToolStripMenu, "newToolStripMenu");
+            this.newToolStripMenu.Click += new System.EventHandler(this.newToolStripMenu_Click);
             // 
-            // openToolStripMenuItem
+            // openToolStripMenu
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            this.openToolStripMenu.Name = "openToolStripMenu";
+            resources.ApplyResources(this.openToolStripMenu, "openToolStripMenu");
+            this.openToolStripMenu.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
-            // saveToolStripMenuItem
+            // saveToolStripMenu
             // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
+            this.saveToolStripMenu.Name = "saveToolStripMenu";
+            resources.ApplyResources(this.saveToolStripMenu, "saveToolStripMenu");
+            this.saveToolStripMenu.Click += new System.EventHandler(this.saveToolStripMenu_Click);
             // 
-            // saveAsToolStripMenuItem
+            // saveAsToolStripMenu
             // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            resources.ApplyResources(this.saveAsToolStripMenuItem, "saveAsToolStripMenuItem");
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAs_Click);
+            this.saveAsToolStripMenu.Name = "saveAsToolStripMenu";
+            resources.ApplyResources(this.saveAsToolStripMenu, "saveAsToolStripMenu");
+            this.saveAsToolStripMenu.Click += new System.EventHandler(this.saveAs_Click);
             // 
             // виглядToolStripMenuItem
             // 
@@ -223,6 +233,7 @@
             this.ExampleButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.ExampleButton1, "ExampleButton1");
             this.ExampleButton1.Name = "ExampleButton1";
+            this.ExampleButton1.Click += new System.EventHandler(this.saveToolStripMenu_Click);
             // 
             // ExportToPDF
             // 
@@ -470,10 +481,10 @@
         private System.Windows.Forms.ToolStripStatusLabel CurrentDate;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem FileStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenu;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenu;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenu;
+        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenu;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton ExampleButton1;
         private System.Windows.Forms.ToolStripButton PrevPage;
@@ -514,6 +525,7 @@
         private System.Windows.Forms.ToolStripMenuItem дозиСеріїВакцинаційногоПротоколуToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton AddNew;
         private System.Windows.Forms.ToolStripButton ExportToTXT;
+        private System.Windows.Forms.ToolStripStatusLabel CurrentFileLabel;
     }
 }
 

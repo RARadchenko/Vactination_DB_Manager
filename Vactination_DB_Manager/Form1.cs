@@ -23,6 +23,7 @@ namespace Vactination_DB_Manager
         private int currentPage = 1;
         private int maxPage = 1;
         private bool reverseSort = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -42,6 +43,8 @@ namespace Vactination_DB_Manager
             mainGrid.startSettings();
 
             mGV = mainGrid;
+
+            CurrentFileLabel.Text = "Новий файл";
         }
         /// <summary>
         /// обробник таймеру поточної дати та часу
@@ -64,6 +67,7 @@ namespace Vactination_DB_Manager
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                CurrentFileLabel.Text = openFileDialog.FileName;
                 dBFile = new DBFileManager(openFileDialog.FileName);
                 currentPage = 1;
                 dBFile.readDBFileLikeArrayOfLines();
@@ -96,28 +100,29 @@ namespace Vactination_DB_Manager
             maxPage += (patientsContainer.PatientsList.Count % MainGridVievSettings.q_of_patients_on_page == 0) ? 0 : 1;
             PagesInfo.Text = $"{currentPage} page of {maxPage}";
             int start = currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1);
-            int finish = currentPage != maxPage ? currentPage * MainGridVievSettings.q_of_patients_on_page + 1: patientsContainer.PatientsList.Count+1;
+            int finish = currentPage != maxPage ? currentPage * MainGridVievSettings.q_of_patients_on_page + 1 : patientsContainer.PatientsList.Count + 1;
             toolStripProgressBar1.Minimum = start;
             toolStripProgressBar1.Maximum = finish;
-                for (int i = start; i < finish; i++)
-                {
-                    mGV.addNewLine(patientsContainer.getOnePatient(i-1, true));
-                    toolStripProgressBar1.Value = i + 1;
-                    //toolStripProgressBar1.Value = (int)((double)((i - start) / (double)(finish - start)) * 100.0);
-                }
+            for (int i = start; i < finish; i++)
+            {
+                mGV.addNewLine(patientsContainer.getOnePatient(i - 1, true));
+                toolStripProgressBar1.Value = i + 1;
+                //toolStripProgressBar1.Value = (int)((double)((i - start) / (double)(finish - start)) * 100.0);
+            }
             //showLines(currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1), currentPage * MainGridVievSettings.q_of_patients_on_page + 1);
         }
         private void NextPage_Click(object sender, EventArgs e)
         {
-            if (currentPage+1 <= maxPage) { currentPage += 1; showPage();}
-            else {
+            if (currentPage + 1 <= maxPage) { currentPage += 1; showPage(); }
+            else
+            {
                 MessageBox.Show($"Page can`t be greather than {maxPage}", "Error");
             }
         }
 
         private void PrevPage_Click(object sender, EventArgs e)
         {
-            if (currentPage-1 > 0) { currentPage -= 1; showPage(); }
+            if (currentPage - 1 > 0) { currentPage -= 1; showPage(); }
             else
             {
                 MessageBox.Show($"Page can`t be less than 0", "Error");
@@ -130,7 +135,7 @@ namespace Vactination_DB_Manager
             {
                 e.Handled = true;
             }
-            if (e.KeyChar == (char)Keys.Enter) 
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 goToPage_Click(sender, e);
             }
@@ -223,7 +228,7 @@ namespace Vactination_DB_Manager
                 for (int i = 0; i < patientsContainer.PatientsList.Count; i++)
                 {
                     ex.ExportByLine(saveFileDialog.FileName, patientsContainer.getOnePatient(i, false));
-                    toolStripProgressBar1.Value = i+1;
+                    toolStripProgressBar1.Value = i + 1;
                 }
             }
         }
@@ -235,8 +240,10 @@ namespace Vactination_DB_Manager
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
+                CurrentFileLabel.Text = saveFileDialog.FileName;
                 TextExport ex = new TextExport(",", ",", 0, patientsContainer.PatientsList.Count, true, 0);
-                ex.ExportByLine(saveFileDialog.FileName, mGV.en_lang_mask);
+                ex.AddNewLine(mGV.en_lang_mask);
+                ex.Export(saveFileDialog.FileName);
                 toolStripProgressBar1.Minimum = 0;
                 toolStripProgressBar1.Maximum = patientsContainer.PatientsList.Count;
                 for (int i = 0; i < patientsContainer.PatientsList.Count; i++)
@@ -246,5 +253,41 @@ namespace Vactination_DB_Manager
                 }
             }
         }
+
+        private void newToolStripMenu_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "CSV files (*.csv)|*.csv";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                CurrentFileLabel.Text = saveFileDialog.FileName;
+                using (StreamWriter writer = new StreamWriter(saveFileDialog.FileName))
+                {
+                    writer.WriteLine();
+                    writer.Close();
+                }
+                patientsContainer.clearPatients();
+                mGV.refresh();
+            }
+        }
+
+        private void saveToolStripMenu_Click(object sender, EventArgs e)
+        {
+            if (CurrentFileLabel.Text == "Новий файл")
+            {
+                newToolStripMenu_Click(sender, e);
+            }
+            TextExport ex = new TextExport(",", ",", 0, patientsContainer.PatientsList.Count, true, 0);
+            ex.AddNewLine(mGV.en_lang_mask);
+            ex.Export(CurrentFileLabel.Text);
+            toolStripProgressBar1.Minimum = 0;
+            toolStripProgressBar1.Maximum = patientsContainer.PatientsList.Count;
+            for (int i = 0; i < patientsContainer.PatientsList.Count; i++)
+            {
+                ex.ExportByLine(CurrentFileLabel.Text, patientsContainer.getOnePatient(i, false));
+                toolStripProgressBar1.Value = i + 1;
+            }
+        }
     }
+
 }

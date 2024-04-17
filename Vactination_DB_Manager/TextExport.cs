@@ -88,7 +88,7 @@ namespace Vactination_DB_Manager
         {
             using (StreamWriter writer = new StreamWriter(fileName))
             {
-                writer.WriteLine();
+                writer.WriteLine(resultString);
                 writer.Close();
             }
         }
