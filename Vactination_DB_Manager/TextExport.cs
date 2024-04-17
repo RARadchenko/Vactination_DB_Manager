@@ -18,50 +18,18 @@ namespace Vactination_DB_Manager
         private bool append = false;
         private int ajusting = 0;
 
-        public TextExport(string columnSeparator, string rowSeparator, int startElement, int endElement, bool append, int ajusting)
+        public TextExport(string columnSeparator, string rowSeparator, bool append, int ajusting)
         {
             ColumnSeparator = columnSeparator;
             RowSeparator = rowSeparator;
-            if (startElement < endElement)
-            {
-                this.startElement = startElement;
-                this.endElement = endElement;
-            }
-            else
-            {
-                throw new ArgumentException("startElement must be less than endElement");
-            }
-
             this.append = append;
             this.ajusting = ajusting;
         }
 
-        public TextExport(int startElement, int endElement)
+        public TextExport(bool append, int ajusting)
         {
-            if (startElement < endElement)
-            {
-                this.startElement = startElement;
-                this.endElement = endElement;
-            }
-            else
-            {
-                throw new ArgumentException("startElement must be less than endElement");
-            }
-        }
-
-        public TextExport(int startElement, int endElement, bool append, int ajusting)
-        {
-            if (startElement < endElement)
-            {
-                this.startElement = startElement;
-                this.endElement = endElement;
-                this.append = append;
-                this.ajusting = ajusting;
-            }
-            else
-            {
-                throw new ArgumentException("startElement must be less than endElement");
-            }
+            this.append = append;
+            this.ajusting = ajusting;
         }
 
         private string PrepareInputString(string[] newLine)

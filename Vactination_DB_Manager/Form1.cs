@@ -222,7 +222,7 @@ namespace Vactination_DB_Manager
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                TextExport ex = new TextExport(0, patientsContainer.PatientsList.Count, true, 40);
+                TextExport ex = new TextExport( true, 40);
                 toolStripProgressBar1.Minimum = 0;
                 toolStripProgressBar1.Maximum = patientsContainer.PatientsList.Count;
                 for (int i = 0; i < patientsContainer.PatientsList.Count; i++)
@@ -241,7 +241,7 @@ namespace Vactination_DB_Manager
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 CurrentFileLabel.Text = saveFileDialog.FileName;
-                TextExport ex = new TextExport(",", ",", 0, patientsContainer.PatientsList.Count, true, 0);
+                TextExport ex = new TextExport(",", ",", true, 0);
                 ex.AddNewLine(mGV.en_lang_mask);
                 ex.Export(saveFileDialog.FileName);
                 toolStripProgressBar1.Minimum = 0;
@@ -275,9 +275,14 @@ namespace Vactination_DB_Manager
         {
             if (CurrentFileLabel.Text == "Новий файл")
             {
-                newToolStripMenu_Click(sender, e);
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "CSV files (*.csv)|*.csv";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    CurrentFileLabel.Text = saveFileDialog.FileName;
+                }
             }
-            TextExport ex = new TextExport(",", ",", 0, patientsContainer.PatientsList.Count, true, 0);
+            TextExport ex = new TextExport(",", ",", true, 0);
             ex.AddNewLine(mGV.en_lang_mask);
             ex.Export(CurrentFileLabel.Text);
             toolStripProgressBar1.Minimum = 0;
