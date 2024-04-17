@@ -21,7 +21,7 @@ namespace Vactination_DB_Manager
         public string Manufacturer { get; set; } = "";
         public string Lot_number { get; set; } = "";
         public DateTime expiration_date { get; set; }
-        public string Dose_quantity_unit { get; set; } = "0.0";
+        public string Dose_quantity_unit { get; set; } = "\"ML\"";
         public string Dose_quantity_value { get; set; } = "0.0";
         public int Vaccination_protocol_dose_sequence { get; set; } = 0;
         public string Vaccination_protocol_series { get; set; } = "";
