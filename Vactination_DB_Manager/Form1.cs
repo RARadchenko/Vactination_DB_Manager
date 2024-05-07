@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MigraDoc.DocumentObjectModel.Tables;
+using MigraDoc.DocumentObjectModel;
+using MigraDoc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +12,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.WebRequestMethods;
+using System.Xml.Linq;
+
 
 
 namespace Vactination_DB_Manager
@@ -292,6 +296,86 @@ namespace Vactination_DB_Manager
                 ex.ExportByLine(CurrentFileLabel.Text, patientsContainer.getOnePatient(i, false));
                 toolStripProgressBar1.Value = i + 1;
             }
+        }
+
+        private void ExportToPDF_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                
+                
+
+                int maxFile = patientsContainer.PatientsList.Count / 1345;
+                maxFile += (patientsContainer.PatientsList.Count % 1345 == 0) ? 0 : 1;
+                toolStripProgressBar1.Minimum = 0;
+                toolStripProgressBar1.Maximum = maxFile;
+                string filePath = saveFileDialog.FileName;
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(filePath);
+                string fileExtension = Path.GetExtension(filePath);
+                string directory = Path.GetDirectoryName(filePath);
+                for (int currentFile = 0; currentFile < maxFile; currentFile++)
+                {
+                    int start = currentFile * 1345;
+                    int finish = currentFile == maxFile -1 ? patientsContainer.PatientsList.Count - 1 : (currentFile + 1)* 1354;
+                    SavePDFFile(Path.Combine(directory, $"{fileNameWithoutExtension}{currentFile}{fileExtension}"), start, finish);
+                    toolStripProgressBar1.Value = currentFile + 1;
+
+                }
+            }
+        }
+
+        async private void SavePDFFile(string Path, int start, int finish)
+        {
+            await Task.Run(() =>
+            {
+                Document document = new Document();
+
+            // Додаємо розділ до документу
+            Section section = document.AddSection();
+            section.PageSetup.LeftMargin = 15;
+            section.PageSetup.TopMargin = 10;
+            section.PageSetup.BottomMargin = 10;
+            section.PageSetup.Orientation = MigraDoc.DocumentObjectModel.Orientation.Landscape;
+            // Додаємо таблицю
+            Table table = section.AddTable();
+
+            table.Format.LeftIndent = -10;
+            string[] oneLIne = new string[20];
+            PdfDocumentRenderer pdfRenderer = new PdfDocumentRenderer(true);
+            //    pdfRenderer.Document = document;
+
+
+                for (int i = 0; i < mGV.ua_lang_mask.Length; i++)
+            {
+                if ((i > 2 && i < 9) || (i > 9 && i < 15) || i == 19 || i == 18 || i == 16) { table.AddColumn(Unit.FromPoint(30)); }
+                else if (i == 9) { table.AddColumn(Unit.FromPoint(100)); }
+                else { table.AddColumn(Unit.FromPoint(60)); }
+            }
+            Row row = table.AddRow();
+            for (int i = 0; i < mGV.ua_lang_mask.Length; i++)
+            {
+                row.Cells[i].AddParagraph(mGV.ua_lang_mask[i]).Format.Font.Size = 3;
+            }
+            for (int i = start; i < finish; i++)
+            {
+                row = table.AddRow();
+                for (int j = 0; j < mGV.ua_lang_mask.Length; j++)
+                {
+                    oneLIne = patientsContainer.getOnePatient(i, false);
+                    row.Cells[j].AddParagraph(oneLIne[j]).Format.Font.Size = 3;
+                }
+
+                    if (i % 1345 == 0 && i != 0)
+                    {
+                    }
+                }
+                pdfRenderer.Document = document;
+                pdfRenderer.RenderDocument();
+                pdfRenderer.PdfDocument.Save(Path);
+            });
         }
     }
 

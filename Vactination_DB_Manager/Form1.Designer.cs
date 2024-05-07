@@ -241,6 +241,7 @@
             this.ExportToPDF.Image = global::Vactination_DB_Manager.Properties.Resources.PDF1;
             resources.ApplyResources(this.ExportToPDF, "ExportToPDF");
             this.ExportToPDF.Name = "ExportToPDF";
+            this.ExportToPDF.Click += new System.EventHandler(this.ExportToPDF_Click);
             // 
             // ExportToTXT
             // 
