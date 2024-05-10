@@ -33,6 +33,9 @@ namespace Vactination_DB_Manager
         public static Color CellColorBackground { get; set; } = Color.White;
         public static Font GridViewFont { get; set; } = new Font("Microsoft Sans Serif", 8F);
 
+        /// <summary>
+        /// завантаження мовних масок для стовбців
+        /// </summary>
         private void readLangsMasks()
         {
             ResourceManager resourceManager = new ResourceManager("Vactination_DB_Manager.GridViewLangMasks", typeof(MainGridVievSettings).Assembly);
@@ -55,6 +58,9 @@ namespace Vactination_DB_Manager
             readLangsMasks();
         }
 
+        /// <summary>
+        /// початкові налаштування
+        /// </summary>
         public void startSettings()
         {
             MainGridViev.Height = 900;
@@ -70,21 +76,26 @@ namespace Vactination_DB_Manager
             }
 
             // Встановлення налаштувань для MainGridView з використанням обраної маски
-            //MainGridViev.RowCount = 1;
 
             MainGridViev.ColumnCount = mask.Length;
-            //MainGridViev.Columns.Clear();
             for (int i = 0; i < mask.Length; i++)
             {
                 MainGridViev.Columns[i].HeaderText = mask[i];
             }
         }
 
+        /// <summary>
+        /// оновлення таблиці
+        /// </summary>
         public void refresh()
         {
             MainGridViev.Rows.Clear();
         }
 
+        /// <summary>
+        /// додавання нового рядку
+        /// </summary>
+        /// <param name="newLine"></param>
         public void addNewLine (string[] newLine)
         {
             DataGridViewRow newRow = new DataGridViewRow();
@@ -96,16 +107,25 @@ namespace Vactination_DB_Manager
             MainGridViev.Rows.Add(newRow);
         }
 
+        /// <summary>
+        /// зміна кольору
+        /// </summary>
         public void changeCellsColor()
         {
             MainGridViev.AlternatingRowsDefaultCellStyle.BackColor = alternativeCellColorBackground;
             MainGridViev.DefaultCellStyle.BackColor = CellColorBackground;
         }
+        /// <summary>
+        /// зміна шрифтів
+        /// </summary>
         public void changeFontStyle()
         {
             MainGridViev.DefaultCellStyle.Font = GridViewFont;
         }
 
+        /// <summary>
+        /// відображення стовбців
+        /// </summary>
         public void changeColums()
         {
             for(int i = 0; i < MainGridViev.Columns.Count; i++)

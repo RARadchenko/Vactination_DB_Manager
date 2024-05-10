@@ -83,6 +83,16 @@ namespace Vactination_DB_Manager.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap glasses {
+            get {
+                object obj = ResourceManager.GetObject("glasses", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hand_left_arrow {
             get {
                 object obj = ResourceManager.GetObject("hand_left_arrow", resourceCulture);
@@ -126,6 +136,16 @@ namespace Vactination_DB_Manager.Properties {
         internal static System.Drawing.Bitmap PDF1 {
             get {
                 object obj = ResourceManager.GetObject("PDF1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap searchLenth {
+            get {
+                object obj = ResourceManager.GetObject("searchLenth", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

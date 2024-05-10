@@ -25,6 +25,10 @@ namespace Vactination_DB_Manager
 
         public string getFileName() { return this.FileName;}
 
+        /// <summary>
+        /// зчитування файлу як рядка
+        /// </summary>
+        /// <returns></returns>
         public string readDBFileLikeString()
         {
             try
@@ -38,6 +42,10 @@ namespace Vactination_DB_Manager
             }
         }
 
+        /// <summary>
+        /// прочитати весь файл як масив
+        /// </summary>
+        /// <returns></returns>
         public string[] readDBFileLikeArrayOfLines()
         {
             try
@@ -52,12 +60,22 @@ namespace Vactination_DB_Manager
             }
         }
 
+        /// <summary>
+        /// метод що повертає рядок з файлу
+        /// </summary>
+        /// <param name="index">номер рядку</param>
+        /// <returns></returns>
         public string getOneLine(int index)
         {
             if (index < fileLines.Length) return fileLines[index];
             else return "Error file haven`t than line";
         }
 
+        /// <summary>
+        /// парсер рядків
+        /// </summary>
+        /// <param name="oneline"></param>
+        /// <returns></returns>
         public string[] splitLine(string oneline) 
         {
             

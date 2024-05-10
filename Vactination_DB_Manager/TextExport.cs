@@ -12,12 +12,17 @@ namespace Vactination_DB_Manager
     {
         private string ColumnSeparator = "|";
         private string RowSeparator = "\n";
-        private int startElement = 0;
-        private int endElement = 0;
         private string resultString = "";
         private bool append = false;
         private int ajusting = 0;
 
+        /// <summary>
+        /// конструктор
+        /// </summary>
+        /// <param name="columnSeparator">роздільник стовбців</param>
+        /// <param name="rowSeparator">роздільник колонок</param>
+        /// <param name="append">режим дозапису</param>
+        /// <param name="ajusting">вирівнювання</param>
         public TextExport(string columnSeparator, string rowSeparator, bool append, int ajusting)
         {
             ColumnSeparator = columnSeparator;
@@ -26,12 +31,22 @@ namespace Vactination_DB_Manager
             this.ajusting = ajusting;
         }
 
+        /// <summary>
+        /// констуктор
+        /// </summary>
+        /// <param name="append">режим дозапису</param>
+        /// <param name="ajusting">вирівнювання</param>
         public TextExport(bool append, int ajusting)
         {
             this.append = append;
             this.ajusting = ajusting;
         }
 
+        /// <summary>
+        /// додавання роздільника між значеннями
+        /// </summary>
+        /// <param name="newLine"></param>
+        /// <returns></returns>
         private string PrepareInputString(string[] newLine)
         {
             string outStr = "";
@@ -47,11 +62,16 @@ namespace Vactination_DB_Manager
             return outStr;
         }
 
+
         public void AddNewLine(string[] newLine)
         {
             resultString = PrepareInputString(newLine);
         }
 
+        /// <summary>
+        /// запис всього файлу
+        /// </summary>
+        /// <param name="fileName"></param>
         public void Export(string fileName)
         {
             using (StreamWriter writer = new StreamWriter(fileName))
@@ -61,6 +81,11 @@ namespace Vactination_DB_Manager
             }
         }
 
+        /// <summary>
+        /// дозапис по рядкам
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="newLine"></param>
         public void ExportByLine(string fileName, string[] newLine)
         {
             using (StreamWriter writer = new StreamWriter(fileName, append: append))

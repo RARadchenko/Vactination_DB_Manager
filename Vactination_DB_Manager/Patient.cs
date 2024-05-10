@@ -32,6 +32,29 @@ namespace Vactination_DB_Manager
 
         public Patient()
         { }
+        /// <summary>
+        /// конструктор класу
+        /// </summary>
+        /// <param name="temp_imunization_id"></param>
+        /// <param name="legal_entity_id"></param>
+        /// <param name="division_identifier_value"></param>
+        /// <param name="status"></param>
+        /// <param name="not_given"></param>
+        /// <param name="vaccine_code"></param>
+        /// <param name="imunization_date"></param>
+        /// <param name="patient_age_group"></param>
+        /// <param name="patient_gender"></param>
+        /// <param name="manufacturer"></param>
+        /// <param name="lot_number"></param>
+        /// <param name="expiration_date"></param>
+        /// <param name="dose_quantity_unit"></param>
+        /// <param name="dose_quantity_value"></param>
+        /// <param name="vaccination_protocol_dose_sequence"></param>
+        /// <param name="vaccination_protocol_series"></param>
+        /// <param name="vaccination_protocol_series_doses"></param>
+        /// <param name="vaccination_protocol_target_diseases"></param>
+        /// <param name="inserted_at"></param>
+        /// <param name="updated_at"></param>
         public Patient(string temp_imunization_id, string legal_entity_id, string division_identifier_value, bool status, bool not_given, string vaccine_code, DateTime imunization_date, string patient_age_group, string patient_gender, string manufacturer, string lot_number, DateTime expiration_date, string dose_quantity_unit, string dose_quantity_value, int vaccination_protocol_dose_sequence, string vaccination_protocol_series, int vaccination_protocol_series_doses, string vaccination_protocol_target_diseases, DateTime inserted_at, DateTime updated_at)
         {
             Temp_imunization_id = temp_imunization_id;
@@ -55,6 +78,10 @@ namespace Vactination_DB_Manager
             Inserted_at = inserted_at;
             this.updated_at = updated_at;
         }
+        /// <summary>
+        /// конструктор що отримує рядок та парсить його для заповнення всії полів
+        /// </summary>
+        /// <param name="OneLine"></param>
         public Patient(string OneLine)
         {
             string pattern = @",(?=(?:[^\""]*\""[^\""]*\"")*(?![^\""]*\""))";
@@ -88,6 +115,11 @@ namespace Vactination_DB_Manager
             updated_at = strTodate(parts[19]);
         }
 
+        /// <summary>
+        /// для парсингу строки в дату
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
         private DateTime strTodate(string date)
         {
             DateTime dateout;
@@ -104,6 +136,11 @@ namespace Vactination_DB_Manager
                 return dateout;
         }
 
+        /// <summary>
+        /// для парсингу дати в строку
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
         private string DateToStr(DateTime date)
         {
             string month = date.Month > 10 ? date.Month.ToString() : '0' + date.Month.ToString();
@@ -111,6 +148,10 @@ namespace Vactination_DB_Manager
             return $"{date.Year.ToString()}-{month}-{day}";
         }
 
+        /// <summary>
+        /// перетворенн до рядка
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{Temp_imunization_id}{Legal_entity_id}{Division_identifier_value}{Status}{Not_given}" +
@@ -119,6 +160,11 @@ namespace Vactination_DB_Manager
                 $"{Vaccination_protocol_series}{Vaccination_protocol_series_doses}{Vaccination_protocol_target_diseases}" +
                 $"{Inserted_at}{updated_at}";
         }
+        /// <summary>
+        /// отримання в форматі рядка
+        /// </summary>
+        /// <param name="change">True= замінює деякий текст</param>
+        /// <returns></returns>
         public string[] getMass(bool change)
         {
             if (change)

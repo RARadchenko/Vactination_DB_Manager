@@ -166,6 +166,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>GridViewLangMasks.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -214,6 +215,8 @@
     <None Include="Resources\TXT.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\glasses.ico" />
+    <None Include="Resources\searchLenth.ico" />
     <Content Include="SharpZipLib\ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

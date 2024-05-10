@@ -38,10 +38,10 @@
             this.StatusTimeTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.FileStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.newFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.виглядToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.LangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +49,7 @@
             this.українськаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainGridViev = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.ExampleButton1 = new System.Windows.Forms.ToolStripButton();
+            this.saveFile = new System.Windows.Forms.ToolStripButton();
             this.ExportToPDF = new System.Windows.Forms.ToolStripButton();
             this.ExportToTXT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -80,6 +80,9 @@
             this.вставленоВToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оновленоВToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddNew = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.searchButton = new System.Windows.Forms.ToolStripButton();
+            this.search = new System.Windows.Forms.ToolStripTextBox();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainGridViev)).BeginInit();
@@ -134,36 +137,36 @@
             // FileStripMenuItem1
             // 
             this.FileStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenu,
-            this.openToolStripMenu,
-            this.saveToolStripMenu,
-            this.saveAsToolStripMenu});
+            this.newFile,
+            this.openFile,
+            this.saveFileStrip,
+            this.saveAs});
             this.FileStripMenuItem1.Name = "FileStripMenuItem1";
             resources.ApplyResources(this.FileStripMenuItem1, "FileStripMenuItem1");
             // 
-            // newToolStripMenu
+            // newFile
             // 
-            this.newToolStripMenu.Name = "newToolStripMenu";
-            resources.ApplyResources(this.newToolStripMenu, "newToolStripMenu");
-            this.newToolStripMenu.Click += new System.EventHandler(this.newToolStripMenu_Click);
+            this.newFile.Name = "newFile";
+            resources.ApplyResources(this.newFile, "newFile");
+            this.newFile.Click += new System.EventHandler(this.newFile_Click);
             // 
-            // openToolStripMenu
+            // openFile
             // 
-            this.openToolStripMenu.Name = "openToolStripMenu";
-            resources.ApplyResources(this.openToolStripMenu, "openToolStripMenu");
-            this.openToolStripMenu.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            this.openFile.Name = "openFile";
+            resources.ApplyResources(this.openFile, "openFile");
+            this.openFile.Click += new System.EventHandler(this.openFile_Click);
             // 
-            // saveToolStripMenu
+            // saveFileStrip
             // 
-            this.saveToolStripMenu.Name = "saveToolStripMenu";
-            resources.ApplyResources(this.saveToolStripMenu, "saveToolStripMenu");
-            this.saveToolStripMenu.Click += new System.EventHandler(this.saveToolStripMenu_Click);
+            this.saveFileStrip.Name = "saveFileStrip";
+            resources.ApplyResources(this.saveFileStrip, "saveFileStrip");
+            this.saveFileStrip.Click += new System.EventHandler(this.saveFile_Click);
             // 
-            // saveAsToolStripMenu
+            // saveAs
             // 
-            this.saveAsToolStripMenu.Name = "saveAsToolStripMenu";
-            resources.ApplyResources(this.saveAsToolStripMenu, "saveAsToolStripMenu");
-            this.saveAsToolStripMenu.Click += new System.EventHandler(this.saveAs_Click);
+            this.saveAs.Name = "saveAs";
+            resources.ApplyResources(this.saveAs, "saveAs");
+            this.saveAs.Click += new System.EventHandler(this.saveAs_Click);
             // 
             // виглядToolStripMenuItem
             // 
@@ -215,7 +218,7 @@
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.GripMargin = new System.Windows.Forms.Padding(0);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ExampleButton1,
+            this.saveFile,
             this.ExportToPDF,
             this.ExportToTXT,
             this.toolStripSeparator1,
@@ -225,15 +228,18 @@
             this.goToPage,
             this.toolStripSeparator2,
             this.SortingMenu,
-            this.AddNew});
+            this.AddNew,
+            this.toolStripSeparator3,
+            this.searchButton,
+            this.search});
             this.toolStrip1.Name = "toolStrip1";
             // 
-            // ExampleButton1
+            // saveFile
             // 
-            this.ExampleButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.ExampleButton1, "ExampleButton1");
-            this.ExampleButton1.Name = "ExampleButton1";
-            this.ExampleButton1.Click += new System.EventHandler(this.saveToolStripMenu_Click);
+            this.saveFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.saveFile, "saveFile");
+            this.saveFile.Name = "saveFile";
+            this.saveFile.Click += new System.EventHandler(this.saveFile_Click);
             // 
             // ExportToPDF
             // 
@@ -449,6 +455,28 @@
             this.AddNew.Name = "AddNew";
             this.AddNew.Click += new System.EventHandler(this.AddNew_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            // 
+            // searchButton
+            // 
+            this.searchButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.searchButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.searchButton.Image = global::Vactination_DB_Manager.Properties.Resources.searchLenth;
+            resources.ApplyResources(this.searchButton, "searchButton");
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // search
+            // 
+            this.search.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.search, "search");
+            this.search.Name = "search";
+            this.search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.search_KeyPress);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -482,12 +510,12 @@
         private System.Windows.Forms.ToolStripStatusLabel CurrentDate;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem FileStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenu;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenu;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenu;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenu;
+        private System.Windows.Forms.ToolStripMenuItem newFile;
+        private System.Windows.Forms.ToolStripMenuItem openFile;
+        private System.Windows.Forms.ToolStripMenuItem saveFileStrip;
+        private System.Windows.Forms.ToolStripMenuItem saveAs;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton ExampleButton1;
+        private System.Windows.Forms.ToolStripButton saveFile;
         private System.Windows.Forms.ToolStripButton PrevPage;
         private System.Windows.Forms.ToolStripButton NextPage;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
@@ -527,6 +555,9 @@
         private System.Windows.Forms.ToolStripButton AddNew;
         private System.Windows.Forms.ToolStripButton ExportToTXT;
         private System.Windows.Forms.ToolStripStatusLabel CurrentFileLabel;
+        private System.Windows.Forms.ToolStripTextBox search;
+        private System.Windows.Forms.ToolStripButton searchButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }
 

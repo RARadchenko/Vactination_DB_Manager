@@ -27,6 +27,7 @@ namespace Vactination_DB_Manager
         private int currentPage = 1;
         private int maxPage = 1;
         private bool reverseSort = false;
+        bool searchMode  = false;
 
         public Form1()
         {
@@ -63,8 +64,12 @@ namespace Vactination_DB_Manager
             CurrentDate.Text = dt.ToString();
         }
 
-
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// відкриття файлу бази даних
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void openFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "CVS files (*.csv)|*.csv";
@@ -81,10 +86,13 @@ namespace Vactination_DB_Manager
                 showPage();
                 maxPage = dBFile.LinesCount / MainGridVievSettings.q_of_patients_on_page;
                 maxPage += (patientsContainer.PatientsList.Count % MainGridVievSettings.q_of_patients_on_page == 0) ? 0 : 1;
-                PagesInfo.Text = $"{currentPage} page of {maxPage}";
+                PagesInfo.Text = $"{currentPage} сторінка з {maxPage}";
             }
         }
 
+        /// <summary>
+        /// заповнення класу-контейнера зчитаними записами
+        /// </summary>
         async void FillUpPatientContainer()
         {
             await Task.Run(() =>
@@ -97,42 +105,73 @@ namespace Vactination_DB_Manager
             });
         }
 
+        /// <summary>
+        /// відображення сторінки
+        /// </summary>
         private void showPage()
         {
             mGV.refresh();
-            maxPage = patientsContainer.PatientsList.Count / MainGridVievSettings.q_of_patients_on_page;
-            maxPage += (patientsContainer.PatientsList.Count % MainGridVievSettings.q_of_patients_on_page == 0) ? 0 : 1;
-            PagesInfo.Text = $"{currentPage} page of {maxPage}";
+            //розрахунок записів для відображення
             int start = currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1);
-            int finish = currentPage != maxPage ? currentPage * MainGridVievSettings.q_of_patients_on_page + 1 : patientsContainer.PatientsList.Count + 1;
+            int finish = 0;
+            //перерозрахунок сторінок
+            if (!searchMode) {
+                maxPage = patientsContainer.PatientsList.Count / MainGridVievSettings.q_of_patients_on_page;
+                maxPage += (patientsContainer.PatientsList.Count % MainGridVievSettings.q_of_patients_on_page == 0) ? 0 : 1;
+                finish = currentPage != maxPage ? currentPage * MainGridVievSettings.q_of_patients_on_page + 1 : patientsContainer.PatientsList.Count + 1;
+            }
+            else
+            {
+                maxPage = patientsContainer.SearchedPatientsList.Count / MainGridVievSettings.q_of_patients_on_page;
+                maxPage += (patientsContainer.SearchedPatientsList.Count % MainGridVievSettings.q_of_patients_on_page == 0) ? 0 : 1;
+                finish = currentPage != maxPage ? currentPage * MainGridVievSettings.q_of_patients_on_page + 1 : patientsContainer.SearchedPatientsList.Count + 1;
+            }
+
+            PagesInfo.Text = $"{currentPage} page of {maxPage}";
             toolStripProgressBar1.Minimum = start;
             toolStripProgressBar1.Maximum = finish;
             for (int i = start; i < finish; i++)
             {
-                mGV.addNewLine(patientsContainer.getOnePatient(i - 1, true));
+                //відображення кожного запису
+                mGV.addNewLine(patientsContainer.getOnePatient(i - 1, true, searchMode));
                 toolStripProgressBar1.Value = i + 1;
-                //toolStripProgressBar1.Value = (int)((double)((i - start) / (double)(finish - start)) * 100.0);
             }
-            //showLines(currentPage * MainGridVievSettings.q_of_patients_on_page - (MainGridVievSettings.q_of_patients_on_page - 1), currentPage * MainGridVievSettings.q_of_patients_on_page + 1);
+            
         }
+
+        /// <summary>
+        /// обробниик переходу на наступну сторінку
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NextPage_Click(object sender, EventArgs e)
         {
             if (currentPage + 1 <= maxPage) { currentPage += 1; showPage(); }
             else
             {
-                MessageBox.Show($"Page can`t be greather than {maxPage}", "Error");
+                MessageBox.Show($"Сторінка не може бути більша ніж {maxPage}", "Помилка");
             }
         }
 
+        /// <summary>
+        /// обробник переходу на попередню сторінку
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PrevPage_Click(object sender, EventArgs e)
         {
             if (currentPage - 1 > 0) { currentPage -= 1; showPage(); }
             else
             {
-                MessageBox.Show($"Page can`t be less than 0", "Error");
+                MessageBox.Show($"Сторінка не може бути менша ніж 0", "Помилка");
             }
         }
 
+        /// <summary>
+        /// ігнорування введення чогось окрім чисел
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pageNumberInput_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
@@ -145,15 +184,25 @@ namespace Vactination_DB_Manager
             }
         }
 
+        /// <summary>
+        /// перехід на сторінку по номеру
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void goToPage_Click(object sender, EventArgs e)
         {
             if (int.Parse(pageNumberInput.Text) > 0 && int.Parse(pageNumberInput.Text) <= maxPage) { currentPage = int.Parse(pageNumberInput.Text); showPage(); }
             else
             {
-                MessageBox.Show($"Page must be in range [1:{maxPage}]", "Error");
+                MessageBox.Show($"Сторінка повинна бути в діапазоні [1:{maxPage}]", "Помилка");
             }
         }
 
+        /// <summary>
+        /// обробник налаштувань таблиці
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gridSettings_Click(object sender, EventArgs e)
         {
             GridSettingsForm gridSettingsForm = new GridSettingsForm();
@@ -162,6 +211,11 @@ namespace Vactination_DB_Manager
             showPage();
         }
 
+        /// <summary>
+        /// при розгортанні вікна прибирання артефактів
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Activated(object sender, EventArgs e)
         {
             MainGridVievSettings mainGrid = new MainGridVievSettings(MainGridViev);
@@ -171,6 +225,11 @@ namespace Vactination_DB_Manager
 
         }
 
+        /// <summary>
+        /// обробник редагування/видалення запису
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainGridViev_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.RowIndex < MainGridViev.Rows.Count - 1)
@@ -188,7 +247,11 @@ namespace Vactination_DB_Manager
             showPage();
         }
 
-
+        /// <summary>
+        /// обробник сортування записів
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SortingMenu_Click(object sender, EventArgs e)
         {
             if (!reverseSort)
@@ -204,14 +267,23 @@ namespace Vactination_DB_Manager
             showPage();
         }
 
+        /// <summary>
+        /// обрання поля для сортування
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sortSelect_Click(object sender, EventArgs e)
         {
             int selected = Array.IndexOf(mGV.ua_lang_mask, sender.ToString());
             patientsContainer.SortByArg(selected, reverseSort);
             showPage();
-            //MessageBox.Show(selected.ToString() + string.Join("|", mGV.ua_lang_mask) + sender.ToString(), "Значення рядка");
         }
 
+        /// <summary>
+        /// обробник додавання нового запису
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddNew_Click(object sender, EventArgs e)
         {
             PatientEditor patientEditor = new PatientEditor(new Patient(), patientsContainer, true);
@@ -219,6 +291,11 @@ namespace Vactination_DB_Manager
             patientEditor.ShowDialog();
         }
 
+        /// <summary>
+        /// обробник експорту до TXT
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExportToTXT_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -237,6 +314,11 @@ namespace Vactination_DB_Manager
             }
         }
 
+        /// <summary>
+        /// обробник зберегти як
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void saveAs_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -258,7 +340,12 @@ namespace Vactination_DB_Manager
             }
         }
 
-        private void newToolStripMenu_Click(object sender, EventArgs e)
+        /// <summary>
+        /// обробник створення нового файлу бази даних
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void newFile_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "CSV files (*.csv)|*.csv";
@@ -275,7 +362,12 @@ namespace Vactination_DB_Manager
             }
         }
 
-        private void saveToolStripMenu_Click(object sender, EventArgs e)
+        /// <summary>
+        /// збереження поточного файлу бази даних
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void saveFile_Click(object sender, EventArgs e)
         {
             if (CurrentFileLabel.Text == "Новий файл")
             {
@@ -286,6 +378,7 @@ namespace Vactination_DB_Manager
                     CurrentFileLabel.Text = saveFileDialog.FileName;
                 }
             }
+            //використання сайд-еффекту від іншого класу
             TextExport ex = new TextExport(",", ",", true, 0);
             ex.AddNewLine(mGV.en_lang_mask);
             ex.Export(CurrentFileLabel.Text);
@@ -298,6 +391,11 @@ namespace Vactination_DB_Manager
             }
         }
 
+        /// <summary>
+        /// експорт до PDF
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExportToPDF_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -305,9 +403,7 @@ namespace Vactination_DB_Manager
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                
-                
-
+                // розбиття записів на делька PDF задля більш швидшого рендерінгу
                 int maxFile = patientsContainer.PatientsList.Count / 1345;
                 maxFile += (patientsContainer.PatientsList.Count % 1345 == 0) ? 0 : 1;
                 toolStripProgressBar1.Minimum = 0;
@@ -327,6 +423,12 @@ namespace Vactination_DB_Manager
             }
         }
 
+        /// <summary>
+        /// асинхронна функція експорту записів до таблиці PDF файлу
+        /// </summary>
+        /// <param name="шлях до файлу"></param>
+        /// <param name="початковий запис"></param>
+        /// <param name="кінцевий запис"></param>
         async private void SavePDFFile(string Path, int start, int finish)
         {
             await Task.Run(() =>
@@ -376,6 +478,40 @@ namespace Vactination_DB_Manager
                 pdfRenderer.RenderDocument();
                 pdfRenderer.PdfDocument.Save(Path);
             });
+        }
+
+
+        
+        /// <summary>
+        /// обробник натискання ввід в текстовому полі пошуку
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            if (search.Text.Length == 0) 
+            {
+                searchMode = false;
+                showPage();
+                return;
+            }
+            searchMode = true;
+            currentPage = 1;
+            patientsContainer.searchPatients(search.Text);
+            showPage();
+        }
+
+        /// <summary>
+        /// обробник кнопки пошуку
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    searchButton_Click(sender, e);
+                }
         }
     }
 

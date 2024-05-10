@@ -8,7 +8,10 @@ namespace Vactination_DB_Manager
 {
     public class PatientsContainer
     {
+        //поле для збереження пацієнтів
         public List<Patient> PatientsList { get; set; }
+        //поле для збереження знайдених пацієнтів
+        public List<Patient> SearchedPatientsList { get; set; }
 
         public PatientsContainer(List<Patient> patientsList)
         {
@@ -17,11 +20,21 @@ namespace Vactination_DB_Manager
         public PatientsContainer()
         {
             PatientsList = new List<Patient>();
+            SearchedPatientsList = new List<Patient>();
         }
+        /// <summary>
+        /// додавання запису
+        /// </summary>
+        /// <param name="patient"></param>
         public void addPatient(Patient patient)
         {
             PatientsList.Add(patient);
         }
+        
+        /// <summary>
+        /// видалення запису
+        /// </summary>
+        /// <param name="patient"></param>
         public void removePatient(Patient patient)
         {
             Patient patientDeleting = PatientsList.Find(p => p.Temp_imunization_id == patient.Temp_imunization_id);
@@ -30,6 +43,13 @@ namespace Vactination_DB_Manager
                 PatientsList.Remove(patientDeleting);
             }
         }
+        
+        /// <summary>
+        /// редагування запису
+        /// </summary>
+        /// <param name="patientOld"></param>
+        /// <param name="patientNew"></param>
+        /// <param name="addNewMode"></param>
         public void editPatient(Patient patientOld, Patient patientNew, bool addNewMode)
         {
             Patient patientEdit = PatientsList.Find(p => p.Temp_imunization_id==patientOld.Temp_imunization_id);
@@ -56,19 +76,51 @@ namespace Vactination_DB_Manager
                 patientEdit.Inserted_at = patientNew.Inserted_at;
                 patientEdit.updated_at = patientNew.updated_at;
             }
+            // в випадну не знаходження додвання нового запису
             else if(addNewMode == true)
             {
                 addPatient(patientNew);
             }
         }
+
+        /// <summary>
+        /// пошук пацієнтів по співпадінню
+        /// </summary>
+        /// <param name="SearchString">Рядок для пошуку</param>
+        public void searchPatients(string SearchString)
+        {
+            SearchedPatientsList.Clear();
+            foreach (var patient in PatientsList)
+            {
+                
+                    if (patient.ToString().ToLower().Contains(SearchString.ToLower()))
+                    {
+                        SearchedPatientsList.Add(patient);
+                    }
+            }
+        }
+
+        /// <summary>
+        /// очищення списку записів
+        /// </summary>
         public void clearPatients()
         {
             PatientsList.Clear();
         }
+        
+        /// <summary>
+        /// розвернення списку
+        /// </summary>
         public void reversePatients()
         {
             PatientsList.Reverse();
         }
+
+        /// <summary>
+        /// сортування списку за заданим параметором
+        /// </summary>
+        /// <param name="Field">поле сортування</param>
+        /// <param name="reversed">напрямок сортування</param>
         public void SortByArg(int Field, bool reversed = false)
         {
             switch (Field)
@@ -141,10 +193,28 @@ namespace Vactination_DB_Manager
                 PatientsList.Reverse();
             }
         }
-        public string[] getOnePatient(int index, bool change)
+
+
+        /// <summary>
+        /// отримання одного запису з списку пацієнтів
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="change"></param>
+        /// <param name="searchMode"></param>
+        /// <returns></returns>
+        public string[] getOnePatient(int index, bool change, bool searchMode = false)
         {
-            if (index < PatientsList.Count) return PatientsList[index].getMass(change);
-            else return new string[] { "Error file haven`t than line" };
+            if (searchMode)
+            {
+                if (index < SearchedPatientsList.Count) return SearchedPatientsList[index].getMass(change);
+                else return new string[] { "Error file haven`t than line" };
+            }
+            else
+            {
+                if (index < PatientsList.Count) return PatientsList[index].getMass(change);
+                else return new string[] { "Error file haven`t than line" };
+                
+            }
         }
     }
 }

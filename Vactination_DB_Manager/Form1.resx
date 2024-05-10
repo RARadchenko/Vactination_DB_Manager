@@ -131,13 +131,13 @@
     <value>100, 16</value>
   </data>
   <data name="PagesInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 17</value>
+    <value>80, 17</value>
   </data>
   <data name="PagesInfo.Text" xml:space="preserve">
-    <value>1 page of 1</value>
+    <value>1 сторінка з 1</value>
   </data>
   <data name="CurrentFileLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1632, 17</value>
+    <value>1617, 17</value>
   </data>
   <data name="CurrentFileLabel.Text" xml:space="preserve">
     <value>NewFile</value>
@@ -179,28 +179,28 @@
   <data name="menuStrip1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
-  <data name="newToolStripMenu.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="newFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 26</value>
   </data>
-  <data name="newToolStripMenu.Text" xml:space="preserve">
+  <data name="newFile.Text" xml:space="preserve">
     <value>Створити новий</value>
   </data>
-  <data name="openToolStripMenu.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="openFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 26</value>
   </data>
-  <data name="openToolStripMenu.Text" xml:space="preserve">
+  <data name="openFile.Text" xml:space="preserve">
     <value>Відкрити існуючий</value>
   </data>
-  <data name="saveToolStripMenu.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="saveFileStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 26</value>
   </data>
-  <data name="saveToolStripMenu.Text" xml:space="preserve">
+  <data name="saveFileStrip.Text" xml:space="preserve">
     <value>Зберегти</value>
   </data>
-  <data name="saveAsToolStripMenu.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="saveAs.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 26</value>
   </data>
-  <data name="saveAsToolStripMenu.Text" xml:space="preserve">
+  <data name="saveAs.Text" xml:space="preserve">
     <value>Зберегти як</value>
   </data>
   <data name="FileStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
@@ -290,7 +290,7 @@
   <data name="toolStrip1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
-  <data name="ExampleButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="saveFile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD/SURBVFhH7ZVBCsJAEATzGj/l0bvgBzwJPsLHiS+JNJ1Z
@@ -302,16 +302,16 @@
 </value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ExampleButton1.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="saveFile.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ExampleButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="saveFile.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="ExampleButton1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="saveFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 36</value>
   </data>
-  <data name="ExampleButton1.Text" xml:space="preserve">
+  <data name="saveFile.Text" xml:space="preserve">
     <value>Зберегти</value>
   </data>
   <data name="ExportToPDF.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -539,6 +539,27 @@
   <data name="AddNew.Text" xml:space="preserve">
     <value>Додати новий запис</value>
   </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 39</value>
+  </data>
+  <data name="searchButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="searchButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="searchButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="searchButton.Text" xml:space="preserve">
+    <value>startSearch</value>
+  </data>
+  <data name="search.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="search.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 39</value>
+  </data>
   <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 29</value>
   </data>
@@ -676,28 +697,28 @@
   <data name="&gt;&gt;FileStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;newToolStripMenu.Name" xml:space="preserve">
-    <value>newToolStripMenu</value>
+  <data name="&gt;&gt;newFile.Name" xml:space="preserve">
+    <value>newFile</value>
   </data>
-  <data name="&gt;&gt;newToolStripMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;newFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;openToolStripMenu.Name" xml:space="preserve">
-    <value>openToolStripMenu</value>
+  <data name="&gt;&gt;openFile.Name" xml:space="preserve">
+    <value>openFile</value>
   </data>
-  <data name="&gt;&gt;openToolStripMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;openFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;saveToolStripMenu.Name" xml:space="preserve">
-    <value>saveToolStripMenu</value>
+  <data name="&gt;&gt;saveFileStrip.Name" xml:space="preserve">
+    <value>saveFileStrip</value>
   </data>
-  <data name="&gt;&gt;saveToolStripMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;saveFileStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;saveAsToolStripMenu.Name" xml:space="preserve">
-    <value>saveAsToolStripMenu</value>
+  <data name="&gt;&gt;saveAs.Name" xml:space="preserve">
+    <value>saveAs</value>
   </data>
-  <data name="&gt;&gt;saveAsToolStripMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;saveAs.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;виглядToolStripMenuItem.Name" xml:space="preserve">
@@ -730,10 +751,10 @@
   <data name="&gt;&gt;українськаToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ExampleButton1.Name" xml:space="preserve">
-    <value>ExampleButton1</value>
+  <data name="&gt;&gt;saveFile.Name" xml:space="preserve">
+    <value>saveFile</value>
   </data>
-  <data name="&gt;&gt;ExampleButton1.Type" xml:space="preserve">
+  <data name="&gt;&gt;saveFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ExportToPDF.Name" xml:space="preserve">
@@ -915,6 +936,24 @@
   </data>
   <data name="&gt;&gt;AddNew.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
+    <value>toolStripSeparator3</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchButton.Name" xml:space="preserve">
+    <value>searchButton</value>
+  </data>
+  <data name="&gt;&gt;searchButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;search.Name" xml:space="preserve">
+    <value>search</value>
+  </data>
+  <data name="&gt;&gt;search.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>

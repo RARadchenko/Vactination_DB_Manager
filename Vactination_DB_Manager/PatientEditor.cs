@@ -39,6 +39,11 @@ namespace Vactination_DB_Manager
             if (addNewMode) Delete.Visible = false;
         }
 
+        /// <summary>
+        /// завантаження запису та заповнення полів вікна
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PatientEditor_Load(object sender, EventArgs e)
         {
             dt = DateTime.Now;
@@ -67,11 +72,13 @@ namespace Vactination_DB_Manager
         }
 
 
-
+        /// <summary>
+        /// збереження відредаговиних даних
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveChanges_Click(object sender, EventArgs e)
         {
-            string mama = Status.Text;
-            string mama2 = Status.SelectedItem.ToString();
             Patient patientEdited = new Patient(IdTempImmunization.Text, legalEntityId.Text,
                 divisionIdefluerValue.Text, Status.Text == "+" ? true : false, NotGiven.Text == "+" ? true : false,
                 VactineCode.Text, DateTime.Parse(immunizationDate.Text), ageGroup.Text, Gender.Text, manufacturer.Text, LotNumber.Text,
@@ -81,6 +88,11 @@ namespace Vactination_DB_Manager
             this.Close();
         }
 
+        /// <summary>
+        /// видалення
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Delete_Click(object sender, EventArgs e)
         {
             Patient patientEdited = new Patient(IdTempImmunization.Text, legalEntityId.Text,
