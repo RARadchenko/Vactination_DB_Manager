@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vactination_DB_Manager", "Vactination_DB_Manager\Vactination_DB_Manager.csproj", "{7CC414EF-5CEF-4E01-84A0-38AC92B21AC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{9E0F8916-5807-4731-A2A6-D1EE0A56B76A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7CC414EF-5CEF-4E01-84A0-38AC92B21AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CC414EF-5CEF-4E01-84A0-38AC92B21AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CC414EF-5CEF-4E01-84A0-38AC92B21AC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E0F8916-5807-4731-A2A6-D1EE0A56B76A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E0F8916-5807-4731-A2A6-D1EE0A56B76A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E0F8916-5807-4731-A2A6-D1EE0A56B76A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E0F8916-5807-4731-A2A6-D1EE0A56B76A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

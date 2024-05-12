@@ -128,7 +128,7 @@
             this.UnPairColor.Size = new System.Drawing.Size(52, 23);
             this.UnPairColor.TabIndex = 6;
             this.UnPairColor.UseVisualStyleBackColor = true;
-            this.UnPairColor.Click += new System.EventHandler(this.button3_Click);
+            this.UnPairColor.Click += new System.EventHandler(this.UnPairColor_Click);
             // 
             // label2
             // 

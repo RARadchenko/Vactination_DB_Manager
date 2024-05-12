@@ -27,7 +27,7 @@ namespace Vactination_DB_Manager
         private int currentPage = 1;
         private int maxPage = 1;
         private bool reverseSort = false;
-        bool searchMode  = false;
+        private bool searchMode  = false;
 
         public Form1()
         {
