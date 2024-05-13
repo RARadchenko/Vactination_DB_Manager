@@ -60,7 +60,7 @@ namespace Vactination_DB_Manager
             manufacturer.Text = patient.Manufacturer;
             LotNumber.Text = patient.Lot_number;
             expirationDate.Text = patient.expiration_date.ToShortDateString() == "01.01.0001" ? immunizationDate.Text : 
-                patient.expiration_date > expirationDate.MinDate ? expirationDate.MinDate.ToString() : patient.expiration_date.ToShortDateString();
+                patient.expiration_date > expirationDate.MinDate ? patient.expiration_date.ToShortDateString()  : expirationDate.MinDate.ToString();
             doseQuantityUnit.Text = patient.Dose_quantity_unit;
             doseQuantityValue.Value = patient.Dose_quantity_value != "NULL" ? decimal.Parse(patient.Dose_quantity_value.Replace(".", ",")) : new decimal(0);
             DoseSequence.Value = patient.Vaccination_protocol_dose_sequence;
