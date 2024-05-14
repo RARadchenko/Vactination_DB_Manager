@@ -18,7 +18,7 @@ using System.Xml.Linq;
 
 namespace Vactination_DB_Manager
 {
-    public partial class Form1 : Form
+    public partial class mainWindow : Form
     {
         private MainGridVievSettings mGV;
         private DBFileManager dBFile;
@@ -29,7 +29,7 @@ namespace Vactination_DB_Manager
         private bool reverseSort = false;
         private bool searchMode  = false;
 
-        public Form1()
+        public mainWindow()
         {
             InitializeComponent();
         }
